@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_message_list">
+        <item>28673:Invalid APP_ID</item>
+        <item>28674:Invalid SDK_KEY</item>
+        <item>28675:APP_ID and SDK_KEY don\'t match</item>
+        <item>28676:SDK_KEY does not match the SDK used</item>
+        <item>28677:The system version is not supported by the current SDK</item>
+        <item>28678:SDK expired, need to download and update</item>
+        <item>90113:SDK activation failed, please open read and write permissions</item>
+        <item>90114:The device has been activated</item>
+        <item>90115:Device not activated</item>
+        <item>90116:DetectFaceScaleVal does not support</item>
+        <item>90117:The activation file does not match the SDK type</item>
+        <item>90118:Device mismatch</item>
+        <item>90119:Unique identification is illegal</item>
+        <item>90120:Parameter is null</item>
+        <item>90121:Liveness has expired</item>
+        <item>90122:Version not supported</item>
+        <item>90123:Signature error</item>
+        <item>90124:Database insert error</item>
+        <item>90125:Verification of unique identifier failed</item>
+        <item>90126:Color space is not supported</item>
+        <item>90127:Image width or height is not supported</item>
+        <item>90128:android.permission.READ_PHONE_STATE permission denied</item>
+        <item>90129:Activation data is corrupted. Please delete the activation file and reactivate it</item>
+        <item>90130:Server unknown error</item>
+        <item>90131:INTERNET permission denied</item>
+        <item>90132:The activation file does not match the SDK version, please reactivate it</item>
+        <item>90133:Device information is too small to generate device fingerprints</item>
+        <item>90134:The difference between client time and server time is within 30 minutes</item>
+        <item>90135:Data check exception</item>
+        <item>90136:The APP_ID and SDK_KEY passed in are inconsistent with the SDK version used</item>
+        <item>90137:A large number of requests will be blocked after a short period of time and will be unblocked after 30 minutes</item>
+        <item>90138:The activation file does not exist</item>
+        <item>90139:The current device time is incorrect. Please adjust the device time</item>
+        <item>94209:Unable to resolve host address</item>
+        <item>94210:Unable to connect to server</item>
+        <item>94211:Network connection timeout</item>
+        <item>94212:Network unknown error</item>
+        <item>98305:Unable to connect to activation code server</item>
+        <item>98306:Server system error</item>
+        <item>98307:Request parameter error</item>
+        <item>98308:The ACTIVE_KEY don\'t match the APP_ID and SDK_KEY</item>
+        <item>98309:ACTIVE_KEY is already in use</item>
+        <item>98310:Abnormal ACTIVE_KEY information</item>
+        <item>98311:The ACTIVE_KEY don\'t match the APP_ID</item>
+        <item>98312:SDK does not match the activation file version</item>
+        <item>98313:ACTIVE_KEY are out of date</item>
+
+        <item>102401:Offline authorization file does not exist or does not have read or write permissions</item>
+        <item>102402:Offline authorization file corrupted</item>
+        <item>102403:Offline authorization file does not match the SDK version</item>
+        <item>102404:Offline authorization file does not match the SDK information</item>
+        <item>102405:Offline authorization file does not match device fingerprint</item>
+        <item>102406:Offline authorization file has expired</item>
+        <item>102407:Offline authorization file is not available. The local activation file can continue to be used</item>
+    </string-array>
+
+    <string-array name="success_preview_voice">
+        <item>@string/success_preview_voice2</item>
+        <item>@string/success_preview_voice3</item>
+        <item>@string/success_preview_voice4</item>
+        <item>@string/success_preview_voice5</item>
+        <item>@string/success_preview_voice6</item>
+    </string-array>
+
+    <string-array name="fail_preview_voice">
+        <item>@string/fail_preview_voice2</item>
+        <item>@string/fail_preview_voice3</item>
+        <item>@string/fail_preview_voice4</item>
+    </string-array>
+
+    <string-array name="face_detect_degree">
+        <item>0°</item>
+        <item>90°</item>
+        <item>180°</item>
+        <item>270°</item>
+    </string-array>
+
+    <string-array name="recognition_distance">
+        <item>@string/recognition_distance_type1</item>
+        <item>@string/recognition_distance_type2</item>
+        <item>@string/recognition_distance_type3</item>
+        <item>@string/recognition_distance_type4</item>
+        <item>@string/recognition_distance_type5</item>
+    </string-array>
+</resources>

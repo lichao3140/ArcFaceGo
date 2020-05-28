@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.fragment.CustomSettingFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.business.setting.ConfigConstants" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.setting.CustomSettingViewModel" />
+    </data>
+
+    <com.arcsoft.arcfacesingle.view.widgets.SimpleScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_show_settings"
+                style="@style/tv_setting_title"
+                android:layout_marginTop="@dimen/y43"
+                android:onClick="@{viewModel::onClick}"
+                android:text="@string/show_setting" />
+
+            <TextView
+                android:id="@+id/tv_input_company_name"
+                style="@style/tv_setting"
+                android:layout_below="@+id/tv_show_settings"
+                android:layout_marginStart="@dimen/x32"
+                android:layout_marginTop="@dimen/y48"
+                android:text="@string/company_name_subtitle" />
+
+            <EditText
+                android:id="@+id/et_input_company_name"
+                style="@style/ev_setting_default"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/tv_show_settings"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y46"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/tv_set_company_main_logo"
+                android:afterTextChanged="@{viewModel::onInputCompanyNameTextChanged}"
+                android:hint="@string/company_setting_hint"
+                android:maxLength="30"
+                app:appendCursor="@{viewModel.settingInfo.companyName}" />
+
+            <TextView
+                android:id="@+id/tv_set_company_main_logo"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_input_company_name"
+                android:layout_marginStart="@dimen/x32"
+                android:text="@string/set_company_main_logo" />
+
+            <RelativeLayout
+                android:id="@+id/rl_company_main_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_input_company_name"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_set_company_main_logo">
+
+                <ImageView
+                    android:id="@+id/iv_company_main_logo"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/y50"
+                    android:scaleType="fitCenter"
+                    app:imageLogoBmp="@{viewModel.mainBmpField}" />
+
+                <Button
+                    android:id="@+id/btn_set_company_main_logo"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/y50"
+                    android:background="@{viewModel.mainBmpField == null ? @drawable/bg_btn_white_round_selected : @drawable/bg_btn_trans_round_unselected}"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@{viewModel.mainBmpField == null ? @string/upload : @string/delete}"
+                    android:textColor="@{viewModel.mainBmpField == null ? @color/color_tv_blue : @color/color_white}"
+                    android:textSize="24sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_set_main_logo_hint"
+                style="@style/tv_setting_tip"
+                android:layout_below="@+id/tv_input_company_name"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
+                android:layout_toEndOf="@+id/rl_company_main_logo"
+                android:text="@string/main_logo_hint" />
+
+            <TextView
+                android:id="@+id/tv_set_company_second_logo"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_set_company_main_logo"
+                android:layout_marginStart="@dimen/x32"
+                android:text="@string/set_company_second_logo" />
+
+            <RelativeLayout
+                android:id="@+id/rl_company_second_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_set_company_main_logo"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_set_company_main_logo">
+
+                <ImageView
+                    android:id="@+id/iv_company_second_logo"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/y50"
+                    android:scaleType="fitCenter"
+                    app:imageLogoBmp="@{viewModel.subBmpField}" />
+
+                <Button
+                    android:id="@+id/btn_set_company_second_logo"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/y50"
+                    android:background="@{viewModel.subBmpField == null ? @drawable/bg_btn_white_round_selected : @drawable/bg_btn_trans_round_unselected}"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@{viewModel.subBmpField == null ? @string/upload : @string/delete}"
+                    android:textColor="@{viewModel.subBmpField == null ? @color/color_tv_blue : @color/color_white}"
+                    android:textSize="@dimen/sp_24" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_set_second_logo_hint"
+                style="@style/tv_setting_tip"
+                android:layout_below="@+id/tv_set_company_main_logo"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
+                android:layout_toEndOf="@+id/rl_company_second_logo"
+                android:text="@string/sub_logo_hint" />
+
+            <TextView
+                android:id="@+id/tv_set_logo_result"
+                style="@style/tv_setting_tip"
+                android:layout_below="@+id/rl_company_second_logo"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="@dimen/y40"
+                android:text="@string/set_company_logo_result" />
+
+            <TextView
+                android:id="@+id/tv_success_show_mode_title"
+                style="@style/tv_setting_title"
+                android:layout_below="@+id/tv_set_logo_result"
+                android:layout_marginTop="@dimen/y43"
+                android:text="@string/recognition_success" />
+
+            <TextView
+                android:id="@+id/tv_success_show_mode"
+                style="@style/tv_setting"
+                android:layout_below="@id/tv_success_show_mode_title"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="@dimen/y48"
+                android:text="@string/show_mode" />
+
+            <RadioGroup
+                android:id="@+id/rg_name_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_success_show_mode_title"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_success_show_mode"
+                android:onCheckedChanged="@{viewModel::onSuccessDisplayModeCheckedChanged}"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rb_full_name"
+                    style="@style/rb_setting"
+                    android:checked="@{viewModel.settingInfo.displayMode == ConfigConstants.DISPLAY_MODE_SUCCESS_NAME}"
+                    android:text="@string/name" />
+
+                <RadioButton
+                    android:id="@+id/rb_surname"
+                    style="@style/rb_setting"
+                    android:layout_marginLeft="@dimen/x150"
+                    android:layout_marginTop="-46dp"
+                    android:checked="@{viewModel.settingInfo.displayMode == ConfigConstants.DISPLAY_MODE_HIDE_LAST_CHAR}"
+                    android:text="@string/name_hide_last" />
+
+                <RadioButton
+                    android:id="@+id/rb_custom_name"
+                    style="@style/rb_setting"
+                    android:layout_marginTop="@dimen/y48"
+                    android:checked="@{viewModel.settingInfo.displayMode == ConfigConstants.DISPLAY_MODE_SUCCESS_CUSTOM}" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/et_success_show_mode_custom"
+                style="@style/ev_setting_default"
+                android:layout_width="match_parent"
+                android:layout_above="@+id/tv_success_voice_mode"
+                android:layout_marginStart="@dimen/x52"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/tv_success_show_mode"
+                android:afterTextChanged="@{viewModel::onSuccessShowModeTextChanged}"
+                android:hint="@string/show_mode_hint"
+                android:maxLength="30"
+                app:appendCursor="@{viewModel.settingInfo.customDisplayModeFormat}"
+                app:displayMode="@{viewModel.settingInfo.displayMode}" />
+
+            <TextView
+                android:id="@+id/tv_success_voice_mode"
+                style="@style/tv_setting"
+                android:layout_below="@id/rg_name_mode"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="@dimen/y48"
+                android:text="@string/voice_mode" />
+
+            <Switch
+                android:id="@+id/sh_success_voice_mode"
+                style="@style/switch_theme"
+                android:layout_below="@id/rg_name_mode"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
+                android:layout_toEndOf="@+id/tv_success_voice_mode"
+                android:checked="@{viewModel.settingInfo.voiceMode != ConfigConstants.SUCCESS_VOICE_MODE_NO_PLAY}"
+                android:onClick="@{viewModel::onSuccessVoiceModeSwitchClicked}" />
+
+            <RadioGroup
+                android:id="@+id/rb_success_voice_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_success_voice_mode"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_success_voice_mode"
+                android:onCheckedChanged="@{viewModel::onSuccessVoiceModeCheckedChanged}"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.settingInfo.voiceMode != ConfigConstants.SUCCESS_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}">
+
+                <RadioButton
+                    android:id="@+id/rb_success_voice_mode_preview_voice"
+                    style="@style/rb_setting"
+                    android:checked="@={viewModel.rbPreviewVoiceSuccess}" />
+
+                <RadioButton
+                    android:id="@+id/rb_success_voice_mode_custom"
+                    style="@style/rb_setting"
+                    android:layout_marginTop="@dimen/y48"
+                    android:checked="@={!viewModel.rbPreviewVoiceSuccess}" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/sr_success_preview_voice"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y50"
+                android:layout_below="@+id/tv_success_voice_mode"
+                android:layout_marginTop="@dimen/y48"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/rb_success_voice_mode"
+                android:background="@drawable/spinner_white_border"
+                android:selectedItemPosition="@{viewModel.srPreviewVoiceSuccess}"
+                android:visibility="@{viewModel.settingInfo.voiceMode != ConfigConstants.SUCCESS_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}"
+                app:previewVoiceMode="@{viewModel.settingInfo.voiceMode}" />
+
+            <EditText
+                android:id="@+id/et_success_voice_mode_custom"
+                style="@style/ev_setting_width"
+                android:layout_above="@id/tv_fail_show_mode_title"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/rb_success_voice_mode"
+                android:afterTextChanged="@{viewModel::onSuccessCustomVoiceTextChanged}"
+                android:hint="@string/show_mode_hint"
+                android:maxLength="30"
+                android:visibility="@{viewModel.settingInfo.voiceMode != ConfigConstants.SUCCESS_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}"
+                app:appendCursor="@{viewModel.settingInfo.customVoiceModeFormat}"
+                app:voiceMode="@{viewModel.settingInfo.voiceMode}" />
+
+            <TextView
+                android:id="@+id/tv_fail_show_mode_title"
+                style="@style/tv_setting_title"
+                android:layout_below="@+id/rb_success_voice_mode"
+                android:layout_marginTop="@dimen/y45"
+                android:text="@string/recognition_failed" />
+
+            <TextView
+                android:id="@+id/tv_fail_show_mode"
+                style="@style/tv_setting"
+                android:layout_below="@id/tv_fail_show_mode_title"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="@dimen/y48"
+                android:text="@string/show_mode" />
+
+            <Switch
+                android:id="@+id/sh_fail_show_mode"
+                style="@style/switch_theme"
+                android:layout_below="@id/tv_fail_show_mode_title"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
+                android:layout_toEndOf="@+id/tv_fail_show_mode"
+                android:checked="@{viewModel.settingInfo.displayModeFail != ConfigConstants.DISPLAY_MODE_FAILED_NOT_FEEDBACK}"
+                android:onClick="@{viewModel::onFailShowModeSwitchClicked}" />
+
+            <RadioGroup
+                android:id="@+id/rg_fail_show_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fail_show_mode"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_fail_show_mode"
+                android:onCheckedChanged="@{viewModel::onFailShowModeCheckedChanged}"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.settingInfo.displayModeFail != ConfigConstants.DISPLAY_MODE_FAILED_NOT_FEEDBACK?View.VISIBLE:View.GONE}">
+
+                <RadioButton
+                    android:id="@+id/rb_fail_show_mode_preview_voice"
+                    style="@style/rb_setting"
+                    android:checked="@={viewModel.rbPreviewShowFail}"
+                    android:text="@string/default_markup" />
+
+                <RadioButton
+                    android:id="@+id/rb_fail_show_mode_custom"
+                    style="@style/rb_setting"
+                    android:layout_marginTop="@dimen/y48"
+                    android:checked="@={!viewModel.rbPreviewShowFail}" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/et_failed_show_mode_custom"
+                style="@style/ev_setting_width"
+                android:layout_above="@+id/tv_fail_voice_mode"
+                android:layout_marginStart="@dimen/x52"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/tv_fail_show_mode"
+                android:afterTextChanged="@{viewModel::onFailedShowModeTextChanged}"
+                android:hint="@string/custom_input_hint"
+                android:maxLength="30"
+                android:visibility="@{viewModel.settingInfo.displayModeFail != ConfigConstants.DISPLAY_MODE_FAILED_NOT_FEEDBACK?View.VISIBLE:View.GONE}"
+                app:appendCursor="@{viewModel.settingInfo.customFailDisplayModeFormat}"
+                app:displayModeFail="@{viewModel.settingInfo.displayModeFail}" />
+
+            <TextView
+                android:id="@+id/tv_fail_voice_mode"
+                style="@style/tv_setting"
+                android:layout_below="@id/rg_fail_show_mode"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="@dimen/y48"
+                android:text="@string/voice_mode" />
+
+            <Switch
+                android:id="@+id/sh_fail_voice_mode"
+                style="@style/switch_theme"
+                android:layout_below="@id/rg_fail_show_mode"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y60"
+                android:layout_toEndOf="@+id/tv_fail_voice_mode"
+                android:checked="@{viewModel.settingInfo.voiceModeFail != ConfigConstants.FAILED_VOICE_MODE_NO_PLAY}"
+                android:onClick="@{viewModel::onFailVoiceSwitchClicked}" />
+
+            <RadioGroup
+                android:id="@+id/rg_fail_voice_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_fail_voice_mode"
+                android:layout_marginStart="@dimen/x20"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_toEndOf="@+id/tv_fail_voice_mode"
+                android:onCheckedChanged="@{viewModel::onFailVoiceModeCheckedChanged}"
+                android:orientation="vertical"
+                android:visibility="@{viewModel.settingInfo.voiceModeFail != ConfigConstants.FAILED_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}">
+
+                <RadioButton
+                    android:id="@+id/rb_fail_voice_mode_preview_voice"
+                    style="@style/rb_setting"
+                    android:checked="@={viewModel.rbPreviewVoiceFail}" />
+
+                <RadioButton
+                    android:id="@+id/rb_fail_voice_mode_custom"
+                    style="@style/rb_setting"
+                    android:layout_marginTop="@dimen/y48"
+                    android:checked="@={!viewModel.rbPreviewVoiceFail}" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/sr_fail_preview_voice"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y50"
+                android:layout_below="@+id/tv_fail_voice_mode"
+                android:layout_marginTop="@dimen/y48"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/rg_fail_voice_mode"
+                android:background="@drawable/spinner_white_border"
+                android:selectedItemPosition="@{viewModel.srPreviewVoiceFail}"
+                android:visibility="@{viewModel.settingInfo.voiceModeFail != ConfigConstants.FAILED_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}"
+                app:previewVoiceModeFail="@{viewModel.settingInfo.voiceModeFail}" />
+
+            <EditText
+                android:id="@+id/et_failed_voice_mode_custom"
+                style="@style/ev_setting_width"
+                android:layout_below="@+id/sr_fail_preview_voice"
+                android:layout_marginTop="@dimen/y45"
+                android:layout_marginEnd="@dimen/x30"
+                android:layout_toEndOf="@+id/rg_fail_voice_mode"
+                android:afterTextChanged="@{viewModel::onFailCustomVoiceTextChanged}"
+                android:hint="@string/custom_input_hint"
+                android:maxLength="30"
+                android:visibility="@{viewModel.settingInfo.voiceModeFail != ConfigConstants.FAILED_VOICE_MODE_NO_PLAY?View.VISIBLE:View.GONE}"
+                app:appendCursor="@{viewModel.settingInfo.customFailVoiceModeFormat}"
+                app:voiceModeFail="@{viewModel.settingInfo.voiceModeFail}" />
+
+            <TextView
+                android:layout_width="@dimen/x0"
+                android:layout_height="@dimen/x0"
+                android:layout_below="@+id/et_failed_voice_mode_custom"
+                android:layout_marginBottom="@dimen/y30" />
+        </RelativeLayout>
+
+    </com.arcsoft.arcfacesingle.view.widgets.SimpleScrollView>
+
+</layout>

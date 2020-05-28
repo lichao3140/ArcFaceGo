@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.DeviceActiveViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.CustomTopBar
+            android:id="@+id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_top_bar">
+
+            <RelativeLayout
+                android:id="@+id/rl_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_clear_focus"
+                    android:layout_width="@dimen/x0"
+                    android:layout_height="@dimen/x0"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/tv_input_arcface_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btn_read_local_active_info"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x30"
+                    android:text="@string/please_input_arcface2_0_info"
+                    android:textColor="@color/color_common_enable"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.inputInfoVisible ? View.VISIBLE : View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_read_local_active_info"
+                    style="@style/btn_setting"
+                    android:layout_width="@dimen/x240"
+                    android:layout_height="@dimen/x45"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x76"
+                    android:enabled="@{viewModel.getReadLocalActiveInfoEnable}"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@string/read_local_active_info" />
+
+                <TextView
+                    android:id="@+id/tv_app_id_tip"
+                    style="@style/tv_setting"
+                    android:layout_below="@id/tv_input_arcface_info"
+                    android:layout_alignEnd="@id/tv_active_key_tip"
+                    android:layout_marginTop="@dimen/x55"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/app_id" />
+
+                <EditText
+                    android:id="@+id/et_app_id"
+                    style="@style/ev_setting"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/tv_input_arcface_info"
+                    android:layout_marginTop="@dimen/y55"
+                    android:layout_marginEnd="@dimen/x245"
+                    android:layout_toEndOf="@id/tv_active_key_tip"
+                    android:afterTextChanged="@{viewModel::onAppIdEditTextChanged}"
+                    android:gravity="center_vertical|start"
+                    android:inputType="textNoSuggestions|textVisiblePassword"
+                    android:maxLength="100"
+                    android:text="@={viewModel.fieldAppId}" />
+
+                <ImageView
+                    android:id="@+id/iv_warn1"
+                    android:layout_width="@dimen/x20"
+                    android:layout_height="@dimen/x20"
+                    android:layout_below="@id/et_app_id"
+                    android:layout_marginTop="@dimen/y10"
+                    android:layout_toEndOf="@id/tv_app_id_tip"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.appIdVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_app_id"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/y8"
+                    android:layout_toEndOf="@id/iv_warn1"
+                    android:text="@string/not_empty"
+                    android:textColor="@color/color_text_red"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.appIdVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_sdk_key_tip"
+                    style="@style/tv_setting"
+                    android:layout_below="@id/et_app_id"
+                    android:layout_alignEnd="@id/tv_active_key_tip"
+                    android:layout_marginTop="@dimen/x62"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:layout_toStartOf="@id/et_sdk_key"
+                    android:text="@string/sdk_key" />
+
+                <EditText
+                    android:id="@+id/et_sdk_key"
+                    style="@style/ev_setting"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/et_app_id"
+                    android:layout_marginTop="@dimen/x60"
+                    android:layout_marginEnd="@dimen/x245"
+                    android:layout_toEndOf="@id/tv_active_key_tip"
+                    android:afterTextChanged="@{viewModel::onSdkKeyEditTextChanged}"
+                    android:gravity="center_vertical|start"
+                    android:inputType="textNoSuggestions|textVisiblePassword"
+                    android:maxLength="100"
+                    android:text="@={viewModel.fieldSdkKey}" />
+
+                <ImageView
+                    android:id="@+id/iv_warn2"
+                    android:layout_width="@dimen/x20"
+                    android:layout_height="@dimen/x20"
+                    android:layout_below="@id/et_sdk_key"
+                    android:layout_marginTop="@dimen/y10"
+                    android:layout_toEndOf="@id/tv_sdk_key_tip"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.sdkKeyVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_sdk_key"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/y8"
+                    android:layout_toEndOf="@id/iv_warn2"
+                    android:text="@string/not_empty"
+                    android:textColor="@color/color_text_red"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.sdkKeyVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_active_key_tip"
+                    style="@style/tv_setting"
+                    android:layout_below="@id/et_sdk_key"
+                    android:layout_marginStart="@dimen/x245"
+                    android:layout_marginTop="@dimen/x62"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/active_key"
+                    android:visibility="@{viewModel.chargeVisible ? View.VISIBLE : View.GONE}" />
+
+                <com.arcsoft.arcfacesingle.view.widgets.SeparateEditText
+                    android:id="@+id/et_active_key"
+                    style="@style/ev_setting"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/et_sdk_key"
+                    android:layout_marginTop="@dimen/x60"
+                    android:layout_marginEnd="@dimen/x245"
+                    android:layout_toEndOf="@id/tv_active_key_tip"
+                    android:afterTextChanged="@{viewModel::onActiveKeyEditTextChanged}"
+                    android:digits="@string/digits_access_id"
+                    android:gravity="center_vertical|start"
+                    android:hint="@string/active_key_hint"
+                    android:inputType="textNoSuggestions|textVisiblePassword"
+                    android:maxLength="19"
+                    android:text="@={viewModel.fieldActiveKey}"
+                    android:visibility="@{viewModel.chargeVisible ? View.VISIBLE : View.GONE}" />
+
+                <ImageView
+                    android:id="@+id/iv_warn3"
+                    android:layout_width="@dimen/x20"
+                    android:layout_height="@dimen/x20"
+                    android:layout_below="@id/et_active_key"
+                    android:layout_marginTop="@dimen/y10"
+                    android:layout_toEndOf="@id/tv_active_key_tip"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.activeKeyVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/et_active_key"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/y8"
+                    android:layout_toEndOf="@id/iv_warn3"
+                    android:text="@string/not_empty"
+                    android:textColor="@color/color_text_red"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.activeKeyVisible ? View.VISIBLE : View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_device_active"
+                    style="@style/btn_setting_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x65"
+                    android:layout_below="@id/et_active_key"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x66"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@string/active" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/progress_bar_size25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/et_active_key"
+                    android:layout_alignEnd="@id/btn_device_active"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/x87"
+                    android:layout_marginEnd="@dimen/x45"
+                    android:indeterminateDuration="2000"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_offline_active"
+                    android:layout_below="@id/btn_device_active"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y70"
+                    android:layout_centerHorizontal="true"
+                    android:onClick="@{viewModel::onClick}"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/x50"
+                        android:layout_height="@dimen/x50"
+                        android:background="@drawable/ic_offline_active"/>
+
+                    <TextView
+                        android:id="@+id/tv_offline_active"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/x10"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/offline_active"
+                        android:textSize="@dimen/sp_34"
+                        android:textColor="@color/color_device_color_tip"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_device_active_tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_offline_active"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x70"
+                    android:layout_marginBottom="@dimen/x11"
+                    android:text="@string/device_active_tip1"
+                    android:textColor="@color/color_device_color_tip"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.activeInfo1Visible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_device_active_tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_device_active_tip1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x10"
+                    android:text="@string/device_active_tip2"
+                    android:textColor="@color/color_device_color_tip"
+                    android:textSize="@dimen/sp_16"
+                    android:visibility="@{viewModel.activeInfo2Visible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x25"
+                    android:layout_below="@id/tv_device_active_tip2" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

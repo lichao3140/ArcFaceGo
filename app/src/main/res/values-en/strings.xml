@@ -1,0 +1,537 @@
+<resources>
+    <string name="face_engine_init_fail">Face engine activation failed</string>
+        
+    <string name="ip">IP addr:</string>
+        
+    <string name="serial_num">SN:</string>
+        
+    <string name="mac_address">Mac addr:</string>
+        
+    <string name="close_door_delay">Close the door delay:</string>
+        
+    <string name="threshold">FR threshold:</string>
+        
+    <string name="threshold_hint">Optimum 0.8</string>
+        
+    <string name="retry_recognition_interval">Failure retry:</string>
+        
+    <string name="ir_live_threshold">IR live detection threshold: </string>
+        
+    <string name="success_retry_recognition_interval">Successful retry:</string>
+        
+    <string name="show_mode">popup window:</string>
+        
+    <string name="confirm">OK</string>
+        
+    <string name="cancel">Cancel</string>
+        
+    <string name="close">Close</string>
+        
+    <string name="add">Add</string>
+        
+    <string name="upload">Upload</string>
+        
+    <string name="delete">Delete</string>
+        
+    <string name="face_register">Face Reg</string>
+        
+    <string name="device_active">Device Activation</string>
+        
+    <string name="active">Activate</string>
+        
+    <string name="custom1">Custom</string>
+        
+    <string name="face_live_check">Liveness:</string>
+        
+    <string name="ir_face_live_preview">IR window:</string>
+        
+    <string name="s">s</string>
+        
+    <string name="recognition_distance">Recognition distance:</string>
+        
+    <string name="voice_mode">Voice:</string>
+        
+    <string name="set_company_main_logo">Main Logo:</string>
+        
+    <string name="set_company_second_logo">Sub Logo:</string>
+        
+    <string name="set_company_logo_result">*Recommended LOGO is a transparent PNG image, within 150 pixels high and 300 pixels wide</string>
+        
+    <string name="welcome">Welcome</string>
+        
+    <string name="input_manage_password">Please input password</string>
+        
+    <string name="add_face_info">Add face information</string>
+        
+    <string name="album">Album</string>
+        
+    <string name="photograph">Take photo</string>
+        
+    <string name="local_batch_register">Local batch registration</string>
+
+    <string name="local_usb_register">USB disk registered</string>
+        
+    <string name="select_all">Select all</string>
+        
+    <string name="cancel_select_all">Deselect all</string>
+        
+    <string name="server_port">Port:</string>
+        
+    <string name="take_photo_retry">Retake</string>
+        
+    <string name="dialog_warn">Alert</string>
+        
+    <string name="please_input_name">Please input your name</string>
+        
+    <string name="please_face_up_the_screen">Face to camera</string>
+        
+    <string name="main_logo_setting_success">The main logo has been set successfully</string>
+        
+    <string name="second_logo_setting_success">The sub-logo has been set successfully</string>
+        
+    <string name="delete_faces_complete">Face deletion complete!</string>
+        
+    <string name="batch_register_process_show">Batch registration progress</string>
+        
+    <string name="recognition_success">Recognition successful</string>
+        
+    <string name="name">Name</string>
+        
+    <string name="default_markup">Default</string>
+        
+    <string name="not_feedback">No feedback</string>
+      
+    <string name="recognition_failed">Recognition failed</string>
+        
+    <string name="show_setting">Display settings</string>
+        
+    <string name="recognition_distance_type1">Very close</string>
+        
+    <string name="recognition_distance_type2">Near</string>
+        
+    <string name="recognition_distance_type3">Medium</string>
+        
+    <string name="recognition_distance_type4">Distance</string>
+        
+    <string name="recognition_distance_type5">Far</string>
+        
+    <string name="degree_0">0</string>
+        
+    <string name="degree_90">90</string>
+        
+    <string name="degree_180">180</string>
+        
+    <string name="degree_270">270</string>
+        
+    <string name="confirm_delete_main_logo">Confirm deleting the main Logo?</string>
+        
+    <string name="confirm_delete_second_logo">Confirm deleting the sub-logo?</string>
+        
+    <string name="logo_not_exist">Logo image does not exist and does not need to be deleted</string>
+        
+    <string name="delete_success">Delete successfully</string>
+        
+    <string name="delete_failure">Delete failed</string>
+        
+    <string name="device_reboot_every_day">Daily restart:</string>
+        
+    <string name="device_sleep_setting">Sleep:</string>
+        
+    <string name="follow_system">By system</string>
+        
+    <string name="not_sleep">Never</string>
+        
+    <string name="screen_default_bright_setting_switch">Brightness:</string>
+        
+    <string name="colon">:</string>
+        
+    <string name="hour">h</string>
+        
+    <string name="minute">m</string>
+        
+    <string name="percent">%</string>
+        
+    <string name="index_screen_default_show">Screensaver:</string>
+        
+    <string name="please_input_arcface2_0_info">Please input ArcFace 3.1 activation information</string>
+        
+    <string name="read_local_active_info">Auto Enter</string>
+        
+    <string name="app_id">APP_ID:</string>
+        
+    <string name="sdk_key">SDK_KEY:</string>
+        
+    <string name="active_key">ACTIVE_KEY:</string>
+        
+    <string name="not_empty">Cannot be empty</string>
+        
+    <string name="device_active_tip1">If you do not have an activation code, please log on to the software platform</string>
+        
+    <string name="device_active_tip2">http://ai.arcsoft.com.cn/product/arcface.html</string>
+        
+    <string name="device_active_successful">Device activation successful</string>
+        
+    <string name="config_file_invalid">Activation file invalid</string>
+        
+    <string name="config_file_not_complete">Activation file is incomplete</string>
+        
+    <string name="config_file_format_error">Activation file format is incorrect</string>
+        
+    <string name="app_id_empty">APP_ID is empty</string>
+        
+    <string name="sdk_key_empty">SDK_KEY is empty</string>
+        
+    <string name="active_key_empty">ACTIVE_KEY is empty</string>
+        
+    <string name="app_id_contain_special_char">APP_ID contains special characters</string>
+        
+    <string name="sdk_key_contain_special_char">SDK_KEY contains special characters</string>
+        
+    <string name="active_key_contain_special_char">ACTIVE_KEY contains special characters</string>
+        
+    <string name="upload_record_image">Upload FR record picture:</string>
+        
+    <string name="company_name_subtitle">Subscript:</string>
+        
+    <string name="company_setting_hint">Company name or system name, etc</string>
+        
+    <string name="main_logo_hint">Display in the upper left corner</string>
+        
+    <string name="sub_logo_hint">Display in the lower right corner, you can not set</string>
+        
+    <string name="name_hide_last">Last name</string>
+        
+    <string name="show_mode_hint">Custom, such as: {name} Hello, {ID} Hello</string>
+        
+    <string name="custom_input_hint">Please input custom content</string>
+        
+    <string name="success_preview_voice2">Preset sound: name</string>
+        
+    <string name="success_preview_voice3">Preset sound: recognition success</string>
+        
+    <string name="success_preview_voice4">Preset sound: Welcome</string>
+        
+    <string name="success_preview_voice5">Preset sound: the door is open</string>
+        
+    <string name="success_preview_voice6">Preset sound: the door is open, welcome to</string>
+        
+    <string name="fail_preview_voice2">Preset sound: beep ~ (alarm tone)</string>
+        
+    <string name="fail_preview_voice3">Preset sound: recognition failed</string>
+        
+    <string name="fail_preview_voice4">Preset sound: verification failed</string>
+
+        
+    <string name="recognize_password_cannot_empty">Please enter your password</string>
+        
+    <string name="recognize_password_wrong">Password error, please retype</string>
+        
+    <string name="setting_image_invalid">The selected image is invalid, please reselect it</string>
+
+        
+    <string name="face_manager_tip_common_fail">Unknown error, please try again</string>
+
+    <string name="face_manager_tip_detect_no_face_image">No face was detected</string>
+
+    <string name="face_manager_tip_detect_no_face_video">No face was detected, please confirm the correct Angle in “HW adaptation”</string>
+        
+    <string name="face_manager_tip_more_than_one_face">Multiple faces found. Please keep one person on screen</string>
+             
+    <string name="face_manager_tip_degree_big_image">Face deflection angle is too large</string>
+        
+    <string name="face_manager_tip_degree_big_video">Face deflection angle is too large, please face the camera</string>
+
+    <string name="face_manager_tip_recognize_fail">Face feature data extraction failed, please try again</string>
+        
+    <string name="face_manager_tip_register_success">Registration successful. Please wait for data refreshing.</string>
+        
+    <string name="face_manager_allow_pass">Allow access</string>
+        
+    <string name="face_manager_person_add_failed">Personnel addition failed, please try again</string>
+        
+    <string name="face_manager_person_add_face_failed">Failed to add personnel picture, please try again</string>
+        
+    <string name="face_manager_person_save_bitmap_failed">Failed to save personnel pictures. Please try again</string>
+        
+    <string name="unauthorized_access">You don\'t have permission access.</string>
+        
+    <string name="device_is_not_root">Unable to get root privileges</string>
+        
+    <string name="device_mac_address_empty">Device Mac address acquisition failed, please open wifi</string>
+        
+    <string name="device_storage_warn_tip1">Insufficient storage space, please clean the space in time!</string>
+             
+    <string name="device_storage_warn_tip3">Storage space is seriously insufficient, affecting the normal use of the program!</string>
+        
+    <string name="add_person_from_server_to_device">The management system is adding face data from device, please wait a moment!</string>
+        
+    <string name="delete_person_from_server_to_device">The management system is deleting face data in device, please wait a moment!</string>
+        
+    <string name="batch_register_complete">Registration completed, please check the registration results!</string>
+        
+    <string name="save_picture_fail">Save failed</string>
+        
+    <string name="network_invalid">Network connection failed </string>
+
+    <string name="ir_camera_warn">The IR camera is abnormal. Please check or change the liveness mode! </string>
+
+        
+    <string name="access_control_settings">System settings</string>
+        
+    <string name="recognition_settings">FR settings</string>
+        
+    <string name="custom_settings">Personalize</string>
+        
+    <string name="camera_preview_size_setting">Camera resolution: </string>
+        
+    <string name="select_camera_preview_size_tip">Please select the resolution so that the contents of the two cameras are the same, or the IR range is larger </string>
+        
+    <string name="preview_view_camera_position_zero">0</string>
+        
+    <string name="preview_view_camera_position_one">1</string>
+        
+    <string name="preview_frame_camera">Preview camera:</string>
+        
+    <string name="preview_view_face_detect_degree">Preview FR angle:</string>
+        
+    <string name="preview_view_face_detect_degree_tip">Please select the correct angle to ensure that the APP display view can detect the face box</string>
+        
+    <string name="preview_frame">APP display view</string>
+        
+    <string name="adjustment_normal_degree_and_ratio">Please adjust to normal Angle and proportion</string>
+        
+    <string name="rotate_90_degrees">Rotate 90°</string>
+        
+    <string name="width_height_interchange">Wide high swap</string>
+        
+    <string name="mirror_image">Mirror</string>
+        
+    <string name="face_rect_horizontal_mirror">Face horizontal mirroring</string>
+        
+    <string name="face_rect_vertical_mirror">Face vertical mirror</string>
+        
+    <string name="recognition_algorithm_collection">Recognition algorithm acquisition: </string>
+        
+    <string name="recognition_algorithm_collection_tip">Please adjust the following two recognition algorithms to capture the view so that the face frame position is the same</string>
+        
+    <string name="horizontal_displacement">Horizontal movement:</string>
+        
+    <string name="vertical_displacement">Vertical movement:</string>
+        
+    <string name="save">Save</string>
+        
+    <string name="adaptation_info_save_success">The adaptation information is saved successfully</string>
+        
+    <string name="settings_save_success">Save settings parameters successfully</string>
+        
+    <string name="splash_bottom_tip">Let the face recognition everywhere</string>
+        
+    <string name="please_select_app_mode">Please select mode:</string>
+        
+    <string name="current_app_mode_offline_lan">Current mode:Local Mode</string>
+        
+    <string name="offline_lan_mode">Local Mode</string>
+        
+    <string name="cloud_ai_ot_mode">Cloud mode</string>
+        
+    <string name="offline_lan_introduction">Local running,can match up Manage-client or self-client.</string>
+        
+    <string name="ai_cloud_introduction">Cloud running, match up ArcLink-cloud service or privately servers.</string>
+        
+    <string name="please_input_ai_cloud_ip">Please input the server address:</string>
+        
+    <string name="current_app_mode_ai_cloud">Current mode: cloud mode</string>
+        
+    <string name="select_app_mode_warn_tip1">Please choose the schema mode carefully</string>
+        
+    <string name="select_app_mode_warn_tip2">Switch mode will cause some data to be incompatible or missing</string>
+        
+    <string name="toast_select_app_mode">Please select mode</string>
+        
+    <string name="is_change_to">Switch to:</string>
+        
+    <string name="question_mark">\?</string>
+        
+    <string name="dialog_select_mode_warn1">The face database is not compatible with the cloud mode. All data will be cleared, including face data and recognition record.</string>
+        
+    <string name="dialog_select_mode_warn2">Face data will be natively compatible, but recognition records will be cleared</string>
+        
+    <string name="operation_failed">Operation failed</string>
+        
+    <string name="cleaning_data_please_wait">Data is cleaning, please wait for a while</string>
+        
+    <string name="cleaning_data_complete">Data cleaning completed</string>
+        
+    <string name="current_mode_is_offline_lan_mode">Current mode is already "Local Mode"</string>
+        
+    <string name="current_mode_is_cloud_ai_ot_mode">Current mode is already "Cloud Mode"</string>
+        
+    <string name="device_access">Device Access</string>
+        
+    <string name="device_access_id">Access code:</string>
+        
+    <string name="device_identify">Device ID:</string>
+        
+    <string name="server_ip_address">Server address:</string>
+        
+    <string name="device_unbinding">Unbind Device</string>
+        
+    <string name="access_code_already_use">Access code is used</string>
+    <string name="access_code_already_bind_device_warn">Replace the original equipment?</string>
+    <string name="access_code_already_bind_device_warn2">It is recommended to untie the original equipment first!</string>
+
+    <string name="skip">skip ></string>
+        
+    <string name="mode_change">Mode switch</string>
+        
+    <string name="device_adaptation">HW adaptation</string>
+        
+    <string name="adaptation_info">Adaptation Information</string>
+    <string name="digits_access_id">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+
+    <string name="input_register_person_id">Please input ID:</string>
+    <string name="input_register_person_name">Please input name:</string>
+    <string name="input_register_person_id_hint">Work number or student number. It can be empty if you like.</string>
+    <string name="install_reboot_tip">Restart in 3s</string>
+    <string name="install_warn_tip">Are you sure to upgrade the access control system?</string>
+
+    <string name="submit_to">Submit</string>
+    <string name="tips_add_face_info_batch">Please copy photos into the specific directory first. Photo name must be person name.</string>
+    <string name="tips_add_face_info_usb">Please copy photos into the specific directory first. Photo name must be person name.</string>
+    <string name="face_delete_all">Are you sure to delete all face data?</string>
+    <string name="face_delete_select">Delete</string>
+    <string name="face_delete_select_suffix">selected items of data?</string>
+    <string name="face_total">Total number of face base library:</string>
+    <string name="face_live_check_method">Living Mode:</string>
+    <string name="non_living">Non-living</string>
+    <string name="living">Living</string>
+    <string name="register_cancel">This registration has been cancelled</string>
+    <string name="register_error">No face registration file detected, please check</string>
+    <string name="wait">Hang on</string>
+    <string name="camera_open_fail">Camera failure</string>
+    <string name="confirm_open">Confirm open</string>
+    <string name="confirm_is_access_device">Do you have access to app \"%s\"?</string>
+    <string name="device_tag_update_success">The device identification has been modified successfully</string>
+    <string name="device_tag_update_fail">Device id modification failed: %s</string>
+    <string name="already_rotation_degree">Current rotation %d°</string>
+    <string name="delete_face_result">Deleted %1$d/Total %2$d</string>
+    <string name="register_face_name_length_invalid">The name of the registrant must not exceed 30 characters</string>
+    <string name="register_face_id_length_invalid">Registrant ID cannot exceed 30 characters</string>
+    <string name="server_address_is_not_valid">The server address is not valid</string>
+    <string name="unable_to_connect_to_server">Unable to connect to server, please check network or server address</string>
+    <string name="access_code_invalid">Access code invalid</string>
+    <string name="confirm_unbind_device">Are you sure to unbind</string>
+    <string name="please_input_device_port">Please input port</string>
+    <string name="device_port_range">Network ports range from 1024 to 65535</string>
+    <string name="successful_operation">Success</string>
+    <string name="device_already_access_app">The device is connected to %s</string>
+    <string name="device_info_get_fail">Device information acquisition failed</string>
+    <string name="char_length_is_not_twenty">No more than 30 characters</string>
+    <string name="press_the_exit_procedure_again">Press once again exit</string>
+    <string name="save_fail_try_again">Save failed, please try again</string>
+    <string name="please_enter_the_brightness_of_standby_screen">Please input the brightness of the standby screen</string>
+    <string name="please_enter_the_daily_reboot_time">Please input the daily restart time of the device</string>
+    <string name="please_enter_closing_delay">Please input door closing delay</string>
+    <string name="please_enter_recognition_threshold">Please input identification threshold</string>
+    <string name="recognition_threshold_range_is_0_1">The FR threshold range is [0,1]</string>
+    <string name="please_enter_the_failed_retry_interval">Please input the failed retry interval</string>
+    <string name="please_enter_the_success_retry_interval">Please input identification retry interval</string>
+    <string name="please_enter_the_threshold_of_ir">Please input IR Liveness threshold</string>
+    <string name="the_threshold_of_ir_was_0_1">IR threshold range is [0,1]</string>
+    <string name="custom_content_should_not_contain_single_quotation">Identify successful pop-up display custom content cannot contain \'</string>
+    <string name="custom_content_should_not_exceed_30_characters">Custom content cannot exceed 30 characters</string>
+    <string name="subscript_text_should_not_contain_single_quotation">Subscript text cannot contain \'</string>
+    <string name="subscript_text_should_not_exceed_30_characters">Subscript text cannot exceed 30 characters</string>
+    <string name="please_select_the_successful_voice_preset_type">Please select the successful speech preset type</string>
+    <string name="please_select_the_failed_voice_preset_type">Please select the failed speech preset type</string>
+    <string name="registered_picture_not_detected_please_check">No registered image detected, please check</string>
+    <string name="u_disk_is_not_available">This U disk is not available, please check and try again</string>
+    <string name="device_reboot_failed_please_check">Device restart failed. Please check if the application has system permissions</string>
+    <string name="logo_setup_failed_try_again">Logo setup failed. Please try again</string>
+    <string name="logo_picture_width_should_not_exceed">Logo image wide cannot exceed %d</string>
+    <string name="logo_picture_height_should_not_exceed">Logo image height cannot exceed %d</string>
+    <string name="logo_picture_is_too_big_please_try_again">Logo image is too large, please try again</string>
+    <string name="face_engine_init_fail_error_code">Engine initialization failed :%d</string>
+    <string name="u_disk_removed">U disk removed</string>
+    <string name="batch_register_count_detail">Total: %1$d; Registration success :%2$d; Registration failed :%3$d</string>
+    <string name="upload_fr_record_picture_tip">It will don\'t upload pictures with this closed. Only records data will be recorded.</string>
+    <string name="version1">Version %s</string>
+    <string name="version2">V %s</string>
+    <string name="rgb">RGB</string>
+    <string name="ir">IR</string>
+    <string name="retry">Retry</string>
+
+    <string name="you_have_no_access_right">no permission to pass</string>
+    <string name="u_disk_config_file_invalid">Activation file error in U disk,please check!</string>
+    <string name="u_disk_config_file_empty">Have not activation file in U disk,please check!</string>
+    <string name="face_engine_init_fail_please_retry">Engine initialization failed,cann\'t work execute!</string>
+
+    <string name="device_name">Device name:</string>
+    <string name="device_name_tip">Please input device name</string>
+    <string name="device_name_hint">Identify device, no more than 30 characters.</string>
+    <string name="device_info">Device information</string>
+    <string name="person_manager_search">Search</string>
+    <string name="person_info_name">Name:</string>
+    <string name="person_info_id">ID:</string>
+    <string name="ic_card_no">IC Card No.:</string>
+    <string name="permission">Permission</string>
+    <string name="search_person_hint">Enter name or number to search</string>
+    <string name="search_person_count_result">Search %d results</string>
+    <string name="import_data">Import</string>
+    <string name="export_data">Export</string>
+    <string name="export_data_successful">Data export successfully</string>
+    <string name="export_data_failed">Data export failed</string>
+    <string name="batch_import_person_data_base">Import mass face database</string>
+    <string name="import_failed_data_empty">Import failed: Face database data does not exist</string>
+    <string name="import_failed_feature_version_invalid">Import failed: incompatible face feature versions</string>
+    <string name="fq_empty_hint">Please input face quality threshold</string>
+    <string name="fq_range_hint">The face quality threshold range is [0,1]</string>
+    <string name="face_quality_open">FQ threshold:</string>
+    <string name="fq_fail_hint">Ensure suitable scene</string>
+    <string name="active_key_hint">Active key</string>
+    <string name="no_active_file_please_check">No activation file, please check!</string>
+    <string name="upgrade_arc_face_sdk_warn1">Algorithm SDK upgrade</string>
+    <string name="upgrade_arc_face_sdk_warn2">Face registration messages are incompatible and need to be re-registered</string>
+    <string name="upgrade_arc_face_sdk_warn3">Automatically register and update. There may be failures, please do it manually.</string>
+    <string name="immediate_processing">Register now</string>
+    <string name="temporarily">Don\'t</string>
+    <string name="upgrade_arc_face_dialog_title">Registering and updating</string>
+    <string name="face_quality_fail">Low photo quality, please make sure the face is clear</string>
+    <string name="ir_threshold_hint">Optimum 0.7</string>
+    <string name="fq_threshold_hint">Optimum 0.35</string>
+    <string name="delay_range_hint">The retry interval range is [1,10]</string>
+    <string name="connect_status">Connected:</string>
+    <string name="connect_server">Remote IP:</string>
+    <string name="connect_offline">Stand-alone operation</string>
+    <string name="connect_title">Do you want to unbind from the management side?</string>
+    <string name="disconnect">Unbind</string>
+    <string name="device_active_failed_please_try_again">Device activation failed, please try again.</string>
+    <string name="invalid_param">invalid param</string>
+    <string name="offline_active">Offline Activation</string>
+    <string name="broadcast_package_name">Receive broadcast APK package name:</string>
+
+    <string name="arc_link_device_disconnected">Device disconnected</string>
+    <string name="permission_date">Effective date:</string>
+    <string name="permission_week">Repeat range:</string>
+    <string name="permission_no_permission">Nothing</string>
+    <string name="permission_every_day">Every day</string>
+    <string name="permission_time_range">Time interval</string>
+    <string name="not_limit">Unlimited</string>
+    <string name="working_day">Working day</string>
+    <string name="monday">Mon.</string>
+    <string name="tuesday">Tues.</string>
+    <string name="wednesday">Wed.</string>
+    <string name="thursday">Thur.</string>
+    <string name="friday">Fri.</string>
+    <string name="saturday">Sat.</string>
+    <string name="sunday">Sun.</string>
+
+    <string name="authorization_expired">-1016:Authorization has expired</string>
+    <string name="device_reboot_msg_send_success_confirm">Restart command sent successfully, please confirm!</string>
+    <string name="data_parsing_exception_please_check">Data parsing is abnormal, please check</string>
+
+    <string name="use_reminder">Use reminders</string>
+    <string name="open_source_content">Please confirm the code whether to call the codec library of the system. Please be noted that if \"Call\", the possible legal liabilities will be borne by yourself. If \"Refuse\", it will affect the program operation.</string>
+    <string name="transfer">Call</string>
+    <string name="refuse">Refuse</string>
+</resources>

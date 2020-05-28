@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.SettingActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.business.setting.ConfigConstants" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.setting.SettingViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <SurfaceView
+            android:layout_width="@dimen/x0"
+            android:layout_height="@dimen/x0" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.CustomTopBar
+            android:id="@+id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/ll_device_active"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_marginEnd="@dimen/x140"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_setting_save"
+                android:layout_width="@dimen/x100"
+                android:layout_marginEnd="@dimen/x26"
+                style="@style/btn_setting_save_land"
+                android:layout_marginStart="@dimen/x28"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/btn_face_register"
+                style="@style/btn_setting_top_land"
+                android:onClick="@{viewModel::onClick}"
+                android:text="@string/face_register"
+                android:visibility="@{viewModel.addFaceVisible ? View.VISIBLE : View.GONE}" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/category_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/custom_top_bar"
+            android:background="@color/color_border_blue_40_percent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tv_item_one"
+                style="@style/btn_category"
+                android:layout_marginTop="@dimen/y44"
+                android:text="@string/access_control_settings" />
+
+            <Button
+                android:id="@+id/tv_item_two"
+                android:layout_below="@id/tv_item_one"
+                style="@style/btn_category"
+                android:text="@string/recognition_settings" />
+
+            <Button
+                android:id="@+id/tv_item_three"
+                android:layout_below="@id/tv_item_two"
+                style="@style/btn_category"
+                android:text="@string/custom_settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/y20"
+                android:text="@{viewModel.strVersion}"
+                android:textColor="@color/color_border_blue"
+                android:textSize="@dimen/sp_20" />
+        </RelativeLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/myViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/custom_top_bar"
+            android:layout_toEndOf="@+id/category_view" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,252 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="tv_setting">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="tv_setting_text_size_24" parent="tv_setting">
+        <item name="android:textSize">@dimen/sp_24</item>
+    </style>
+
+    <style name="tv_setting_margin_top_50" parent="tv_setting">
+        <item name="android:layout_marginTop">@dimen/y50</item>
+    </style>
+
+    <style name="tv_size_30_center_horizontal" parent="tv_setting">
+        <item name="android:textSize">@dimen/y30</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="tv_setting_tip" parent="tv_setting">
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:textColor">@color/tv_setting_tip</item>
+    </style>
+
+    <style name="tv_setting_white_tip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="tv_setting_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/x30</item>
+        <item name="android:layout_marginEnd">@dimen/x30</item>
+        <item name="android:background">@drawable/bg_tv_blue_round</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+        <item name="android:textColor">@color/color_white</item>
+    </style>
+
+    <style name="btn_setting">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/color_setting_btn_text</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:background">@drawable/selector_btn_setting</item>
+    </style>
+
+    <style name="btn_device_access">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:background">@drawable/enable_btn_device_access</item>
+    </style>
+
+    <style name="btn_setting_enable" parent="btn_setting">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/color_setting_btn_text_enable</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:background">@drawable/selector_setting_btn_enable</item>
+    </style>
+
+    <style name="btn_setting_top">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">@dimen/y45</item>
+        <item name="android:textColor">@color/color_setting_btn_text</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:background">@drawable/selector_btn_setting</item>
+    </style>
+
+    <style name="btn_setting_top_land" parent="btn_setting_top">
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_height">@dimen/y50</item>
+        <item name="android:textSize">@dimen/sp_28</item>
+    </style>
+
+    <style name="check_box"  parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:paddingStart">@dimen/x10</item>
+        <item name="android:button">@drawable/selector_setting_check_box</item>
+    </style>
+
+    <style name="btn_setting_save">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y60</item>
+        <item name="android:textSize">@dimen/sp_40</item>
+        <item name="android:textColor">@color/color_setting_btn_save_text</item>
+        <item name="android:background">@drawable/selector_setting_save_btn</item>
+        <item name="android:layout_marginBottom">@dimen/y10</item>
+        <item name="android:layout_marginStart">@dimen/x10</item>
+        <item name="android:layout_marginEnd">@dimen/x10</item>
+    </style>
+
+    <style name="btn_setting_save_land">
+        <item name="android:layout_width">@dimen/x130</item>
+        <item name="android:layout_height">@dimen/y50</item>
+        <item name="android:textSize">@dimen/sp_28</item>
+        <item name="android:textColor">@color/color_setting_btn_save_text</item>
+        <item name="android:background">@drawable/selector_setting_save_btn</item>
+    </style>
+
+    <style name="ev_setting_no_border">
+        <item name="android:layout_height">@dimen/y50</item>
+        <item name="android:paddingStart">@dimen/x20</item>
+        <item name="android:paddingEnd">@dimen/x20</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/et_text_color</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:textColorHint">@color/color_white_tran_60_percent</item>
+        <item name="android:background">@color/color_transparency</item>
+    </style>
+
+    <style name="ev_setting_default" parent="ev_setting_no_border">
+        <item name="android:background">@drawable/selector_setting_et</item>
+    </style>
+
+    <style name="ev_setting" parent="ev_setting_default">
+        <item name="android:layout_width">@dimen/x100</item>
+    </style>
+
+    <style name="ev_setting_no_grey" parent="ev_setting_default">
+        <item name="android:background">@drawable/selector_setting_et_no_grey</item>
+        <item name="android:textColor">@color/et_text_no_grey_color</item>
+    </style>
+
+    <style name="ev_setting_width" parent="ev_setting_default">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="rb_setting_select_mode" parent="rb_setting">
+        <item name="android:button">@null</item>
+        <item name="android:background">@null</item>
+        <item name="android:drawableLeft">@drawable/selector_setting_radio_button</item>
+        <item name="android:drawablePadding">@dimen/x10</item>
+    </style>
+
+    <style name="rb_setting">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:button">@drawable/selector_setting_radio_button</item>
+        <item name="android:paddingStart">10dp</item>
+    </style>
+
+    <style name="settings_edit_text">
+        <item name="android:background">@drawable/bg_btn_white_round_border</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">@dimen/y48</item>
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <style name="settings_edit_text_enable">
+        <item name="android:background">@drawable/selector_bg_edittext</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/et_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginTop">@dimen/y48</item>
+        <item name="android:layout_alignParentEnd">true</item>
+    </style>
+
+    <style name="switch_theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="btn_dialog">
+        <item name="android:layout_width">@dimen/x170</item>
+        <item name="android:layout_height">@dimen/x60</item>
+        <item name="android:textSize">@dimen/sp_36</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="btn_dialog_done" parent="btn_dialog">
+        <item name="android:textSize">@dimen/sp_40</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/enable_btn_dialog_done</item>
+        <item name="android:background">@drawable/selector_dialog_btn_ok</item>
+    </style>
+
+    <style name="btn_clean_data_dialog" parent="btn_dialog">
+        <item name="android:textColor">@color/tc_btn_clean_data_dialog_done</item>
+        <item name="android:background">@drawable/selector_dialog_btn_ok</item>
+    </style>
+
+    <style name="btn_dialog_cancel" parent="btn_dialog">
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/tc_btn_dialog_cancel</item>
+        <item name="android:background">@drawable/dialog_btn_cancel</item>
+    </style>
+
+    <style name="tv_dialog">
+        <item name="android:layout_width">@dimen/x400</item>
+        <item name="android:layout_height">@dimen/x60</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+    </style>
+
+    <style name="tv_dialog_cancel" parent="tv_dialog">
+        <item name="android:textColor">@color/tc_btn_dialog_cancel</item>
+        <item name="android:background">@drawable/dialog_btn_cancel</item>
+    </style>
+
+    <style name="btn_category">
+        <item name="android:layout_width">@dimen/x240</item>
+        <item name="android:layout_height">@dimen/y90</item>
+        <item name="android:background">@drawable/btn_category_style</item>
+        <item name="android:textColor">@color/btn_text_color</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_34</item>
+    </style>
+
+    <style name="btn_setting_skip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/color_border_blue</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:background">@color/color_transparency</item>
+    </style>
+</resources>

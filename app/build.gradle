@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        splits {
+            abi {
+                enable true
+                reset()
+                include 'armeabi-v7a'
+            }
+        }
+        flavorDimensions "versionCode"
+        multiDexEnabled true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+    signingConfigs {
+        release {
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+        }
+        release {
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    productFlavors {
+
+        if (rootProject.ext.product.pro) {
+            charge_common {
+                applicationId rootProject.ext.flavor.appIdCommonCharge
+                versionCode rootProject.ext.flavor.versionCodeCommonCharge
+                versionName rootProject.ext.flavor.versionNameCommonCharge
+                buildConfigField "String", "APP_File_Provider", '"com.arcsoft.arcfacesingle.charge.fileprovider"'
+            }
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            variant.productFlavors.each { flavor ->
+                def buildType = variant.variantData.variantConfiguration.buildType.name
+                def versionName = variant.versionName
+                if (buildType == "release") {
+                    def apkName = "ArcSoft_ArcFaceGo_V" + versionName +
+                            "_${new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))}_" + flavor.name + ".apk"
+                    output.apkData.outputFileName = apkName
+                } else {
+                    def apkName = "ArcSoft_ArcFaceGo_V" + versionName +
+                            "_${new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))}_" + flavor.name + "_debug.apk"
+                    output.outputFileName = apkName
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.compileOptions.sourceCompatibility
+        targetCompatibility rootProject.ext.compileOptions.targetCompatibility
+    }
+
+    repositories {
+        flatDir {
+            dirs project(':libmodule').file('libs')
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':libmodule')
+    implementation project(':libutil')
+    implementation project(':libdeviceadapt')
+    implementation project(':arcsdk:libarcface')
+    annotationProcessor rootProject.ext.annotationProcessoDeps["annotation"]
+    annotationProcessor rootProject.ext.annotationProcessoDeps["glideCompiler"]
+    annotationProcessor rootProject.ext.annotationProcessoDeps["dbflow"]
+}

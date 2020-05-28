@@ -1,0 +1,26 @@
+<resources>
+    <string name="already_rotation_degree">%d度回転</string>
+    <string name="camera_open_fail">カメラが起動しませんでした</string>
+    <string name="camera_preview_size_setting">カメラ解析度設定：</string>
+    <string name="select_camera_preview_size_tip">2つのカメラ内容が一致するかIR範囲が大きくなるように、解析度を選択してください</string>
+    <string name="preview_view_camera_position_zero">0</string>
+    <string name="preview_view_camera_position_one">1</string>
+    <string name="preview_frame_camera">カメラ設定：</string>
+    <string name="preview_view_face_detect_degree">認証角度設定：</string>
+    <string name="preview_view_face_detect_degree_tip">APPが顔フレーム検出を表示できるように、正しい角度を選択してください</string>
+    <string name="preview_frame">APP表示ビュー</string>
+    <string name="adjustment_normal_degree_and_ratio">正しい角度と比率を調整してください</string>
+    <string name="rotate_90_degrees">90度回転</string>
+    <string name="width_height_interchange">高さ幅変更</string>
+    <string name="mirror_image">鏡像</string>
+    <string name="face_rect_horizontal_mirror">水平鏡像顔長方形</string>
+    <string name="face_rect_vertical_mirror">垂直鏡像顔長方形</string>
+    <string name="recognition_algorithm_collection">認証アルゴリズム収集：</string>
+    <string name="recognition_algorithm_collection_tip">以下の2つのアルゴリズムを収集し、顔認証フレーム位置を一致させるように調整してください</string>
+    <string name="horizontal_displacement">水平移動：</string>
+    <string name="vertical_displacement">垂直移動：</string>
+    <string name="save">保存</string>
+    <string name="adaptation_info_save_success">適応情報保存完了</string>
+    <string name="settings_save_success">パラメーター設定保存完了</string>
+    <string name="face_engine_init_fail">顔エンジンの初期化に失敗しました</string>
+</resources>

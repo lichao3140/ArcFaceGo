@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_screen_default" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y70"
+        android:background="@color/color_top_bar_bg"/>
+
+    <Button
+        android:id="@+id/btn_top_bar_close"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:layout_marginTop="@dimen/x15"
+        android:layout_marginStart="@dimen/x30"
+        android:background="@drawable/ic_close" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_setting_select_device_active"
+                style="@style/btn_dialog_done"
+                android:layout_marginTop="@dimen/x270"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:layout_marginLeft="@dimen/x110"
+                android:layout_marginRight="@dimen/x110"
+                android:textSize="@dimen/sp_40"
+                android:text="@string/device_active"/>
+
+            <Button
+                android:id="@+id/btn_setting_select_mode_change"
+                android:layout_below="@id/btn_setting_select_device_active"
+                style="@style/btn_dialog_done"
+                android:layout_marginTop="@dimen/x50"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:layout_marginLeft="@dimen/x110"
+                android:layout_marginRight="@dimen/x110"
+                android:textSize="@dimen/sp_40"
+                android:text="@string/mode_change"/>
+
+            <Button
+                android:id="@+id/btn_setting_select_device_access"
+                android:layout_below="@id/btn_setting_select_mode_change"
+                style="@style/btn_dialog_done"
+                android:layout_marginTop="@dimen/x50"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:layout_marginLeft="@dimen/x110"
+                android:layout_marginRight="@dimen/x110"
+                android:textSize="@dimen/sp_40"
+                android:text="@string/device_access"/>
+
+            <Button
+                android:id="@+id/btn_setting_select_device_adaptation"
+                android:layout_below="@id/btn_setting_select_device_access"
+                style="@style/btn_dialog_done"
+                android:layout_marginTop="@dimen/x50"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:layout_marginLeft="@dimen/x110"
+                android:layout_marginRight="@dimen/x110"
+                android:textSize="@dimen/sp_40"
+                android:text="@string/device_adaptation"/>
+
+            <TextView
+                android:id="@+id/tv_broadcast_package_name"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_marginTop="@dimen/y150"
+                android:layout_marginStart="@dimen/x110"
+                android:layout_marginEnd="@dimen/x140"
+                android:layout_below="@+id/btn_setting_select_device_adaptation"
+                android:text="@string/broadcast_package_name" />
+
+            <EditText
+                android:id="@+id/et_broadcast_package_name_detail"
+                style="@style/ev_setting_no_grey"
+                android:layout_below="@+id/tv_broadcast_package_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y50"
+                android:layout_marginStart="@dimen/x110"
+                android:layout_marginEnd="@dimen/x140"
+                android:layout_marginTop="@dimen/y10"
+                android:maxLength="100"
+                android:singleLine="true"/>
+
+            <TextView
+                android:id="@+id/tv_broadcast_package_name_detail"
+                android:layout_below="@id/tv_broadcast_package_name"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_marginTop="@dimen/y10"
+                android:layout_marginStart="@dimen/x110"
+                android:layout_marginEnd="@dimen/x140"/>
+
+            <ImageView
+                android:id="@+id/iv_broadcast_package_name_confirm"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:layout_marginTop="@dimen/y15"
+                android:layout_below="@+id/tv_broadcast_package_name"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/x70"
+                android:background="@drawable/ic_edit_confirm"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/iv_broadcast_package_name_edit"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:layout_marginTop="@dimen/y15"
+                android:layout_below="@+id/tv_broadcast_package_name"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/x70"
+                android:background="@drawable/ic_edit"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <TextView
+                android:layout_below="@+id/tv_broadcast_package_name"
+                android:layout_marginTop="@dimen/y100"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x50"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

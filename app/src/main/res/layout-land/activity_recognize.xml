@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.RecognizeActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.RecognizeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_landscape_recognize_activity">
+
+        <FrameLayout
+            android:id="@+id/fl_texture_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.flTextureViewVisible ? View.VISIBLE : View.INVISIBLE}">
+
+            <com.arcsoft.asg.libcamera.view.CameraFaceView
+                android:id="@+id/camera_face_rect_view_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:face_view_show="true"
+                app:media_overlay="false"
+                app:order_on_top="false"
+                app:main_view="true" />
+
+            <FrameLayout
+                android:id="@+id/fl_preview_border"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="@{viewModel.fieldBorderVisible?View.VISIBLE:View.GONE}"
+                app:changeBorder="@{viewModel.faceResultType}" />
+
+            <com.arcsoft.asg.libcamera.view.CameraFaceView
+                android:id="@+id/camera_face_rect_view_vice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:face_view_show="true"
+                app:media_overlay="true"
+                app:order_on_top="true"
+                app:main_view="true" />
+
+            <TextView
+                android:id="@+id/tv_face_live_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="148dp"
+                android:text="@{viewModel.strFaceLiveResult}"
+                android:textColor="@color/color_tv_yellow"
+                android:textSize="30sp"
+                android:visibility="@{viewModel.irPreviewVisible ? View.VISIBLE : View.INVISIBLE}" />
+
+            <com.arcsoft.arcfacesingle.view.widgets.RecognizeResultView
+                android:id="@+id/rl_face_result_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginEnd="@dimen/y105"
+                android:visibility="@{viewModel.rlRecognizeFaceResultVisible ? View.VISIBLE : View.GONE}"
+                app:backgroundAlpha="@{viewModel.fieldFullScreen}"
+                app:recognizeHeadPath="@{viewModel.faceResultHeadPath}"
+                app:recognizeResult="@{viewModel.faceResult}"
+                app:resultBackgroundStatus="@{viewModel.faceResultType}" />
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_landscape_cover" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.ScreenSaverView
+            android:id="@+id/fl_screen_saver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.rlDefBackgroundPorVisible ? View.VISIBLE : View.INVISIBLE}" />
+
+        <RelativeLayout
+            android:id="@+id/rl_setting"
+            android:layout_width="@dimen/x45"
+            android:layout_height="@dimen/x45"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_marginEnd="@dimen/x10"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{viewModel::onClick}"
+            android:padding="@dimen/x10">
+
+            <ImageView
+                android:id="@+id/iv_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_setting"
+                android:visibility="@{viewModel.ivSettingVisible ? View.VISIBLE : View.GONE}" />
+        </RelativeLayout>
+
+        <com.arcsoft.arcfacesingle.view.widgets.RecognizeTopView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:topBackgroundStatus="@{viewModel.faceResultType}"
+            app:topLogo="@{viewModel.mainBmpField}"
+            app:topTitle="@{viewModel.fieldMainTitle}" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.SimpleHintView
+            android:id="@+id/tv_tip_face_to_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y180"
+            android:visibility="@{viewModel.fieldFaceCameraVisible ? View.VISIBLE : View.GONE}"
+            app:hintContent="@{viewModel.fieldHint}" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.RecognizeBottomView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:bottomBackgroundStatus="@{viewModel.faceResultType}"
+            app:bottomDate="@{viewModel.fieldSimpleDate}"
+            app:bottomLogo="@{viewModel.subBmpField}"
+            app:bottomTime="@{viewModel.time}" />
+
+    </RelativeLayout>
+
+</layout>

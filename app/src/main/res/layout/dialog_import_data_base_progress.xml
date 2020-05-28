@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        style="@style/tv_setting"
+        android:layout_marginTop="@dimen/y50"
+        android:text="@string/batch_import_person_data_base" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x50"
+        android:layout_marginEnd="@dimen/x50"
+        android:shadowColor="@color/color_white_tran">
+
+        <com.arcsoft.arcfacesingle.view.widgets.HorizontalProgressBar
+            android:id="@+id/progress_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x36"
+            android:background="@drawable/bg_btn_white_border"
+            app:progress_reached_bar_height="@dimen/x35"
+            app:progress_reached_color="@color/bg_0684f8"
+            app:progress_text_color="@color/color_common_enable"
+            app:progress_unreached_color="@color/color_common_enable" />
+
+        <TextView
+            android:id="@+id/tv_progress_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/color_common_enable"
+            android:textSize="@dimen/sp_24" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_dialog_confirm"
+        style="@style/btn_clean_data_dialog"
+        android:layout_width="@dimen/x169"
+        android:layout_height="@dimen/y60"
+        android:enabled="false"
+        android:text="@string/confirm"
+        android:textSize="@dimen/sp_34" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y50" />
+</LinearLayout>

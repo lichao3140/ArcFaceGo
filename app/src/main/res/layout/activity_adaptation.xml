@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.AdaptationActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.AdaptationViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default" />
+
+        <SurfaceView
+            android:layout_width="@dimen/x0"
+            android:layout_height="@dimen/x0" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.CustomTopBar
+            android:id="@+id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:id="@+id/fragment_adaptation"
+            android:layout_below="@id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/x80" />
+
+        <Button
+            android:id="@+id/btn_setting_save"
+            style="@style/btn_setting_save"
+            android:layout_alignParentBottom="true"
+            android:onClick="@{viewModel::onClick}"
+            android:text="@string/save" />
+
+    </RelativeLayout>
+
+</layout>

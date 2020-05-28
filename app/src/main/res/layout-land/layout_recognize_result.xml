@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.viewmodel.widget.RecognizeResultViewModel" />
+
+        <variable
+            name="viewModel"
+            type="RecognizeResultViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_result_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_result_content"
+            android:layout_width="260dp"
+            android:layout_height="400dp"
+            android:layout_marginStart="@dimen/x15"
+            android:layout_marginTop="@dimen/x15"
+            android:alpha="@{viewModel.fieldBgAlpha}"
+            android:background="@drawable/rst_bg">
+
+            <TextView
+                android:id="@+id/tv_main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/y250"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@{viewModel.fieldResult}"
+                android:textSize="@dimen/sp_28" />
+
+            <TextView
+                android:id="@+id/tv_sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_main_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/y6"
+                android:gravity="center"
+                android:text="@{viewModel.fieldSubResult}"
+                android:textSize="@dimen/sp_16" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="400dp"
+            android:layout_marginStart="@dimen/x15"
+            android:layout_marginTop="@dimen/x15"
+            android:background="@drawable/rst_lw" />
+
+        <ImageView
+            android:id="@+id/iv_corner"
+            android:layout_width="290dp"
+            android:layout_height="430dp" />
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/x260"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:id="@+id/rl_head_shot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y45">
+
+            <com.arcsoft.asg.libcommon.widget.CustomCircleImageView
+                android:id="@+id/iv_head_shot"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_margin="@dimen/x10"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{viewModel.fieldHeadPath}" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

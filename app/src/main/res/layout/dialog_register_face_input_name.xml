@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y500"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_register_name_cancel"
+        android:layout_width="@dimen/x38"
+        android:layout_height="@dimen/x38"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/y20"
+        android:layout_marginEnd="@dimen/x20"
+        android:padding="@dimen/x9"
+        android:src="@mipmap/ic_cancel" />
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y50"/>
+
+    <LinearLayout
+        android:id="@+id/rl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y50"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/tv_setting"
+            android:text="@string/input_register_person_name"/>
+
+        <com.arcsoft.arcfacesingle.view.widgets.FixMemoryLeakEditText
+            android:id="@+id/et_input_face_name"
+            style="@style/ev_setting"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_width="@dimen/x450"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            style="@style/tv_setting"
+            android:text="@string/input_register_person_id"/>
+
+        <com.arcsoft.arcfacesingle.view.widgets.FixMemoryLeakEditText
+            android:id="@+id/et_input_face_id"
+            style="@style/ev_setting"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_width="@dimen/x450"
+            android:hint="@string/input_register_person_id_hint"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_input_face_name_confirm"
+            style="@style/btn_dialog_done"
+            android:layout_gravity="center"
+            android:text="@string/submit_to" />
+    </LinearLayout>
+</RelativeLayout>

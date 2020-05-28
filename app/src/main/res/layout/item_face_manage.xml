@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:id="@+id/card_view"
+        android:layout_width="@dimen/x192"
+        android:layout_height="@dimen/x192"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/item_face_manage_background">
+
+        <ImageView
+            android:id="@+id/iv_face_manage_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+        <CheckBox
+            android:id="@+id/cb_select_face"
+            style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+            android:layout_width="@dimen/x24"
+            android:layout_height="@dimen/x24"
+            android:layout_gravity="end|bottom"
+            android:clickable="false"
+            android:button="@drawable/selector_person_manage_check_box"
+            android:textColor="@drawable/select_background"
+            android:layout_marginEnd="@dimen/x9"
+            android:layout_marginBottom="@dimen/x9"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_person_name"
+        android:layout_below="@+id/card_view"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/sp_24"
+        android:textColor="@color/color_common_enable"/>
+
+    <TextView
+        android:id="@+id/tv_person_id_info"
+        android:layout_below="@+id/tv_person_name"
+        android:layout_width="@dimen/x160"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y6"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/sp_24"
+        android:textColor="@color/color_common_enable"/>
+
+    <View
+        android:layout_below="@+id/tv_person_id_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x40"/>
+
+</RelativeLayout>

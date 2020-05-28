@@ -1,0 +1,26 @@
+<resources>
+    <string name="already_rotation_degree">已旋轉%d度</string>
+    <string name="camera_open_fail">相機開啟失敗</string>
+    <string name="camera_preview_size_setting">摄像头分辨率设置：</string>
+    <string name="select_camera_preview_size_tip">请选择分辨率，使得两个摄像头内容一致，或者IR范围更大</string>
+    <string name="preview_view_camera_position_zero">0</string>
+    <string name="preview_view_camera_position_one">1</string>
+    <string name="preview_frame_camera">预览画面摄像头：</string>
+    <string name="preview_view_face_detect_degree">预览识别角度：</string>
+    <string name="preview_view_face_detect_degree_tip">请选择正确的角度，保证APP显示视图能检测到人脸框</string>
+    <string name="preview_frame">APP显示视图</string>
+    <string name="adjustment_normal_degree_and_ratio">请调整至正常的角度和比例</string>
+    <string name="rotate_90_degrees">旋转90度</string>
+    <string name="width_height_interchange">宽高互换</string>
+    <string name="mirror_image">镜像</string>
+    <string name="face_rect_horizontal_mirror">脸框水平镜像</string>
+    <string name="face_rect_vertical_mirror">脸框竖直镜像</string>
+    <string name="recognition_algorithm_collection">识别算法采集：</string>
+    <string name="recognition_algorithm_collection_tip">请调整以下两个识别算法采集视图，使得人脸框位置一致</string>
+    <string name="horizontal_displacement">水平位移：</string>
+    <string name="vertical_displacement">垂直位移：</string>
+    <string name="save">保存</string>
+    <string name="adaptation_info_save_success">适配信息保存成功</string>
+    <string name="settings_save_success">保存设置参数成功</string>
+    <string name="face_engine_init_fail">引擎初始化失败</string>
+</resources>

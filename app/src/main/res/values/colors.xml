@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_common_enable">@color/color_white</color>
+    <color name="color_common_not_enable">#668FB9</color>
+    <color name="colorTextViewBackground">#80000000</color>
+    <color name="bg_0684f8">#0684f8</color>
+    <color name="bg_black_tran">#45000000</color>
+    <color name="grey_666666">#666666</color>
+    <color name="color_white_tran">#d9ffffff</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_edit_text_border">#b3b8bf</color>
+    <color name="color_edit_text_hint">#66707c</color>
+
+    <color name="color_transparency">#00000000</color>
+    <color name="color_dialog_bg_top_color">#002344</color>
+    <color name="color_dialog_bg_center_color">#032b50</color>
+    <color name="color_dialog_bg_bottom_color">#06335d</color>
+    <color name="color_border_blue">@color/color_0089C7</color>
+    <color name="color_border_blue_40_percent">#660089C7</color>
+    <color name="color_white_tran_three_percent">#08ffffff</color>
+    <color name="color_text_red">#a00f13</color>
+    <color name="color_white_tran_20_percent">#33ffffff</color>
+    <color name="color_white_tran_60_percent">#99ffffff</color>
+    <color name="color_black_tran_20_percent">#33000000</color>
+    <color name="color_black_tran_40_percent">#66000000</color>
+
+    <color name="color_success_bg_color">#019968</color>
+    <color name="color_failed_bg_color">#fc0000</color>
+
+    <color name="color_tv_blue">#0089C7</color>
+    <color name="color_device_color_tip">#2c557d</color>
+    <color name="color_tv_yellow">#FFFFFF00</color>
+    <color name="color_92b3c2">#92b3c2</color>
+    <color name="color_0089C7">#0089C7</color>
+
+    <color name="color_switch_thumb_selected">#6AD0FF</color>
+    <color name="color_switch_thumb_unselected">#FFFFFF</color>
+    <color name="color_switch_track_unselected">#ABABAB</color>
+    <color name="color_switch_track_selected">#017EB8</color>
+    <color name="tv_setting_tip">#0089C7</color>
+    <color name="tv_select_mode_warn">#FE8585</color>
+    <color name="color_top_bar_bg">#1affffff</color>
+    <color name="color_person_manager_bottom">#f3cccfd3</color>
+
+    <color name="color_recognize_normal">#162A40</color>
+    <color name="color_recognize_center">#354870</color>
+    <color name="color_recognize_success">#39B54A</color>
+    <color name="color_recognize_fail">#ED1C24</color>
+    <color name="color_recognize_permission">#EF7D00</color>
+
+    <color name="color_recognize_normal_tran">#80162A40</color>
+    <color name="color_recognize_success_tran">#8039B54A</color>
+    <color name="color_recognize_fail_tran">#80ED1C24</color>
+    <color name="color_recognize_permission_tran">#80EF7D00</color>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_message_list">
+        <item>28673:无效的AppId</item>
+        <item>28674:无效的SDKKey</item>
+        <item>28675:AppId和SDKKey不匹配</item>
+        <item>28676:SDKKey和使用的SDK不匹配</item>
+        <item>28677:系统版本不被当前SDK所支持</item>
+        <item>28678:SDK有效期过期，需要重新下载更新</item>
+        <item>90113:SDK激活失败，请打开读写权限</item>
+        <item>90114:设备已激活</item>
+        <item>90115:设备未激活</item>
+        <item>90116:detectFaceScaleVal不支持</item>
+        <item>90117:激活文件与SDK类型不匹配</item>
+        <item>90118:设备不匹配</item>
+        <item>90119:唯一标识不合法</item>
+        <item>90120:参数为空</item>
+        <item>90121:活体检测功能已过期</item>
+        <item>90122:版本不支持</item>
+        <item>90123:签名错误</item>
+        <item>90124:数据库插入错误</item>
+        <item>90125:唯一标识符校验失败</item>
+        <item>90126:颜色空间不支持</item>
+        <item>90127:图片宽度或高度不支持</item>
+        <item>90128:android.permission.READ_PHONE_STATE权限被拒绝</item>
+        <item>90129:激活数据被破坏，请删除激活文件，重新进行激活</item>
+        <item>90130:服务端未知错误</item>
+        <item>90131:INTERNET权限被拒绝</item>
+        <item>90132:激活文件与SDK版本不匹配，请重新激活</item>
+        <item>90133:设备信息太少，不足以生成设备指纹</item>
+        <item>90134:设备时间与网络时间相差过大，请检查</item>
+        <item>90135:数据校验异常</item>
+        <item>90136:传入的AppId和SDKKey与使用的SDK版本不一致</item>
+        <item>90137:短时间大量请求会被禁止请求，30分钟之后会解封</item>
+        <item>90138:激活文件不存在</item>
+        <item>90139:当前设备时间不正确，请调整设备时间</item>
+        <item>94209:服务器连接失败，请检查网络</item>
+        <item>94210:服务器连接失败，请检查网络</item>
+        <item>94211:网络连接超时</item>
+        <item>94212:网络未知错误</item>
+        <item>98305:无法连接激活码服务器</item>
+        <item>98306:服务器系统错误</item>
+        <item>98307:请求参数错误</item>
+        <item>98308:ActiveKey与AppId、SDKKey不匹配</item>
+        <item>98309:ActiveKey已经被使用</item>
+        <item>98310:ActiveKey信息异常</item>
+        <item>98311:ActiveKey与AppId不匹配</item>
+        <item>98312:SDK与激活文件版本不匹配</item>
+        <item>98313:ActiveKey已过期</item>
+
+        <item>102401:离线授权文件不存在或无读写权限</item>
+        <item>102402:离线授权文件已损坏</item>
+        <item>102403:离线授权文件与SDK版本不匹配</item>
+        <item>102404:离线授权文件与SDK信息不匹配</item>
+        <item>102405:离线授权文件与设备指纹不匹配</item>
+        <item>102406:离线授权文件已过期</item>
+        <item>102407:离线授权文件不可用，本地原有激活文件可继续使用</item>
+    </string-array>
+
+    <string-array name="success_preview_voice">
+        <item>@string/success_preview_voice2</item>
+        <item>@string/success_preview_voice3</item>
+        <item>@string/success_preview_voice4</item>
+        <item>@string/success_preview_voice5</item>
+        <item>@string/success_preview_voice6</item>
+    </string-array>
+
+    <string-array name="fail_preview_voice">
+        <item>@string/fail_preview_voice2</item>
+        <item>@string/fail_preview_voice3</item>
+        <item>@string/fail_preview_voice4</item>
+    </string-array>
+
+    <string-array name="face_detect_degree">
+        <item>0°</item>
+        <item>90°</item>
+        <item>180°</item>
+        <item>270°</item>
+    </string-array>
+
+    <string-array name="recognition_distance">
+        <item>@string/recognition_distance_type1</item>
+        <item>@string/recognition_distance_type2</item>
+        <item>@string/recognition_distance_type3</item>
+        <item>@string/recognition_distance_type4</item>
+        <item>@string/recognition_distance_type5</item>
+    </string-array>
+
+    <integer name="edit_text_char_max_length_30">30</integer>
+    <integer name="edit_text_char_max_length_20">20</integer>
+    <integer name="edit_text_char_max_length_50">50</integer>
+</resources>

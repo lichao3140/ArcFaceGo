@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="setting_check_box" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:paddingStart">@dimen/x10</item>
+        <item name="android:button">@drawable/selector_setting_check_box</item>
+    </style>
+</resources>

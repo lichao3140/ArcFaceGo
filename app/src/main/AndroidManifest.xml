@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.arcsoft.arcfacesingle">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SET_TIME" />
+    <uses-permission android:name="android.permission.SET_TIME_ZONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.REBOOT" />
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+
+    <uses-permission
+        android:name="android.hardware.usb.host"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.usb.host"
+        android:required="true" />
+
+    <uses-permission android:name="com.arcsoft.arcfacesingle.permissions.DEVICE_SERVICE" />
+    <permission android:name="com.arcsoft.arcfacesingle.permissions.DEVICE_SERVICE" />
+
+    <application
+        android:name=".app.ArcFaceSingleApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:sharedUserId="android.uid.system"
+        android:supportsRtl="true"
+        android:theme="@style/FullScreenTheme">
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="720" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="1280" />
+
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.DeviceAccessActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.SelectModeActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.RecognizeActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.AdaptationActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.SettingActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.SettingSelectActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.PersonListActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity android:name=".view.activity.TakePhotoActivity" />
+        <activity
+            android:name=".view.activity.DeviceActiveActivity"
+            android:configChanges="keyboardHidden"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.DeviceInfoActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+        <activity
+            android:name=".view.activity.PersonDetailActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden|stateAlwaysHidden" />
+
+        <service
+            android:name=".service.OfflineLanService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".service.CloudAIotService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".service.SystemEventIntentService"
+            android:exported="false" />
+
+        <service
+            android:name=".service.RemoteService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.arcsoft.arcfacesingle.remoteservice" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".broadcast.IntelligentCardEventReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.IntelligentCard" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".broadcast.UsbReceiver">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+                <action android:name="android.hardware.usb.action.USB_DEVICE_DETACHED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.AutoStartBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.NetWorkStateReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".broadcast.SystemEventReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_DEVICE_STORAGE_LOW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <provider
+            android:name=".provider.MyProvider"
+            android:authorities="${applicationId}.fileprovider.myprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/register_face_paths" />
+        </provider>
+    </application>
+</manifest>

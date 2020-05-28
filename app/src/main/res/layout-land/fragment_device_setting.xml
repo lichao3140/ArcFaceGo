@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.business.setting.ConfigConstants" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.setting.DeviceSettingViewModel" />
+    </data>
+
+    <com.arcsoft.arcfacesingle.view.widgets.SimpleScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x140"
+            android:layout_marginEnd="@dimen/x160">
+
+            <TextView
+                android:id="@+id/tv_connect_key"
+                style="@style/tv_setting"
+                android:layout_marginTop="@dimen/y40"
+                android:text="@string/connect_status"
+                android:visibility="@{viewModel.bPortVisible?View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/tv_connect_value"
+                style="@style/tv_setting"
+                android:layout_marginStart="@dimen/x72"
+                android:layout_marginTop="@dimen/y40"
+                android:layout_toEndOf="@+id/tv_connect_key"
+                android:text="@{viewModel.fieldServerIp}"
+                android:textSize="@{viewModel.fieldConnectStatus?@dimen/sp_30:@dimen/sp_34}"
+                android:visibility="@{viewModel.bPortVisible?View.VISIBLE : View.GONE}" />
+
+            <ImageButton
+                android:id="@+id/ib_disconnect"
+                android:layout_width="@dimen/x30"
+                android:layout_height="@dimen/y30"
+                android:layout_marginStart="@dimen/x5"
+                android:layout_marginTop="@dimen/y48"
+                android:layout_toEndOf="@+id/tv_connect_value"
+                android:background="@color/color_transparency"
+                android:enabled="@{viewModel.fieldConnectStatus}"
+                android:onClick="@{viewModel::onDisconnect}"
+                android:scaleType="fitXY"
+                android:src="@drawable/selector_btn_disconnect"
+                android:visibility="@{viewModel.bPortVisible?View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/tv_ip_key"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_connect_key"
+                android:text="@string/ip" />
+
+            <TextView
+                android:id="@+id/tv_ip_value"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_connect_key"
+                android:layout_marginStart="@dimen/x72"
+                android:layout_toEndOf="@+id/tv_mac_address"
+                android:text="@{viewModel.strIp}" />
+
+            <TextView
+                android:id="@+id/tv_mac_address"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_ip_key"
+                android:text="@string/mac_address" />
+
+            <TextView
+                android:id="@+id/tv_mac_address_value"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_ip_key"
+                android:layout_marginStart="@dimen/x72"
+                android:layout_toEndOf="@+id/tv_mac_address"
+                android:text="@{viewModel.strMacAddress}" />
+
+            <TextView
+                android:id="@+id/tv_mac_address_value2"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_mac_address_value"
+                android:layout_marginStart="@dimen/x72"
+                android:layout_marginTop="@dimen/y15"
+                android:layout_toEndOf="@+id/tv_mac_address"
+                android:text="@{viewModel.strMacAddress2}"
+                android:visibility="@{viewModel.fieldMacAddress2Visible ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/tv_serial_num_key"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_mac_address_value2"
+                android:text="@string/serial_num" />
+
+            <TextView
+                android:id="@+id/tv_serial_num_value"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/tv_mac_address_value2"
+                android:layout_marginStart="@dimen/x72"
+                android:layout_toEndOf="@+id/tv_mac_address"
+                android:autoSizeMaxTextSize="@dimen/sp_34"
+                android:autoSizeMinTextSize="@dimen/sp_16"
+                android:autoSizeStepGranularity="2sp"
+                android:text="@{viewModel.strSN}" />
+
+            <TextView
+                android:id="@+id/tv_server_port"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_serial_num_key"
+                android:text="@string/server_port"
+                android:visibility="@{viewModel.bPortVisible?View.VISIBLE : View.GONE}" />
+
+            <EditText
+                android:id="@+id/et_device_port_value"
+                style="@style/ev_setting_width"
+                android:layout_below="@+id/tv_serial_num_key"
+                android:layout_marginStart="@dimen/x102"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/tv_server_port"
+                android:inputType="number"
+                android:maxLength="5"
+                android:text="@={viewModel.strPort}"
+                android:visibility="@{viewModel.bPortVisible?View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/tv_device_key"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_server_port"
+                android:text="@string/device_name"
+                android:visibility="@{viewModel.bPortVisible ? View.VISIBLE : View.GONE}" />
+
+            <EditText
+                android:id="@+id/et_device_value"
+                style="@style/ev_setting_width"
+                android:layout_below="@+id/tv_server_port"
+                android:layout_marginStart="@dimen/x68"
+                android:layout_marginTop="@dimen/y50"
+                android:layout_marginEnd="@dimen/x40"
+                android:layout_toEndOf="@+id/tv_device_key"
+                android:maxLength="30"
+                android:text="@={viewModel.fieldDeviceName}"
+                android:visibility="@{viewModel.bPortVisible ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/tv_device_sleep"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_device_key"
+                android:text="@string/device_sleep_setting" />
+
+            <RadioGroup
+                android:id="@+id/rg_device_sleep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_device_key"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginTop="@dimen/x52"
+                android:layout_toEndOf="@+id/tv_screen_default_bright_switch"
+                android:onCheckedChanged="@{viewModel::onRadioGroupCheckedChanged}"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_device_sleep_follow_system"
+                    style="@style/rb_setting"
+                    android:checked="@={viewModel.settingInfo.deviceSleepFollowSys}"
+                    android:text="@string/follow_system" />
+
+                <RadioButton
+                    android:id="@+id/rb_device_sleep_not_sleep"
+                    style="@style/rb_setting"
+                    android:layout_marginStart="@dimen/x30"
+                    android:checked="@={!viewModel.settingInfo.deviceSleepFollowSys}"
+                    android:text="@string/not_sleep" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_screen_default_bright_switch"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_device_sleep"
+                android:text="@string/screen_default_bright_setting_switch" />
+
+            <RadioGroup
+                android:id="@+id/rg_screen_default_bright_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_device_sleep"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginTop="@dimen/y52"
+                android:layout_toEndOf="@+id/tv_screen_default_bright_switch"
+                android:onCheckedChanged="@{viewModel::onRadioGroupCheckedChanged}"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_screen_default_bright_follow_system"
+                    style="@style/rb_setting"
+                    android:checked="@={viewModel.settingInfo.screenBrightFollowSys}"
+                    android:text="@string/follow_system" />
+
+                <RadioButton
+                    android:id="@+id/rb_screen_default_bright_custom"
+                    style="@style/rb_setting"
+                    android:layout_marginStart="@dimen/x30"
+                    android:checked="@={!viewModel.settingInfo.screenBrightFollowSys}"
+                    android:text="@string/custom1" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_device_sleep"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="40dp"
+                android:layout_toEndOf="@+id/rg_screen_default_bright_switch"
+                app:screenBright="@{viewModel.settingInfo}">
+
+                <EditText
+                    android:id="@+id/et_screen_default_bright"
+                    style="@style/ev_setting_no_border"
+                    android:layout_width="match_parent"
+                    android:layout_toStartOf="@+id/tv_screen_default_bright_percent"
+                    android:afterTextChanged="@{viewModel::onScreenDefaultBrightTextChanged}"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:paddingStart="@dimen/x5"
+                    android:paddingEnd="@dimen/x5"
+                    android:text="@{viewModel.settingInfo.screenDefBrightPercent}" />
+
+                <TextView
+                    android:id="@+id/tv_screen_default_bright_percent"
+                    style="@style/tv_setting_white_tip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/percent" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_index_screen_default_show"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_screen_default_bright_switch"
+                android:text="@string/index_screen_default_show" />
+
+            <Switch
+                android:id="@+id/sh_screen_default_show"
+                style="@style/switch_theme"
+                android:layout_below="@+id/tv_screen_default_bright_switch"
+                android:layout_marginStart="@dimen/x68"
+                android:layout_marginTop="@dimen/y62"
+                android:layout_toEndOf="@+id/tv_index_screen_default_show"
+                android:checked="@={viewModel.settingInfo.indexScreenDefShow}"
+                android:onClick="@{viewModel::onSwitchClicked}" />
+
+            <TextView
+                android:id="@+id/tv_device_reboot"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_index_screen_default_show"
+                android:text="@string/device_reboot_every_day" />
+
+            <Switch
+                android:id="@+id/sh_device_reboot"
+                style="@style/switch_theme"
+                android:layout_below="@+id/tv_index_screen_default_show"
+                android:layout_marginStart="@dimen/x68"
+                android:layout_marginTop="@dimen/y63"
+                android:layout_toEndOf="@+id/tv_device_reboot"
+                android:checked="@={viewModel.settingInfo.rebootEveryDay}"
+                android:onClick="@{viewModel::onSwitchClicked}" />
+
+            <RelativeLayout
+                android:id="@+id/rl_device_reboot_hour"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_index_screen_default_show"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_toEndOf="@+id/sh_device_reboot"
+                app:deviceHour="@{viewModel.settingInfo}">
+
+                <EditText
+                    android:id="@+id/et_device_reboot_hour"
+                    style="@style/ev_setting_no_border"
+                    android:layout_width="match_parent"
+                    android:afterTextChanged="@{viewModel::onDeviceRebootHourTextChanged}"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:text="@{viewModel.settingInfo.rebootHour}" />
+
+                <TextView
+                    style="@style/tv_setting_white_tip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/hour" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_device_reboot_colon"
+                android:layout_width="24dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_index_screen_default_show"
+                android:layout_marginTop="50dp"
+                android:layout_toEndOf="@+id/rl_device_reboot_hour"
+                android:gravity="center"
+                android:text="@string/colon"
+                android:textColor="@color/color_white"
+                android:textSize="@dimen/sp_24" />
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_index_screen_default_show"
+                android:layout_marginTop="50dp"
+                android:layout_toEndOf="@+id/tv_device_reboot_colon"
+                app:deviceMin="@{viewModel.settingInfo}">
+
+                <EditText
+                    android:id="@+id/et_device_reboot_minute"
+                    style="@style/ev_setting_no_border"
+                    android:layout_width="match_parent"
+                    android:afterTextChanged="@{viewModel::onDeviceRebootMinTextChanged}"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:text="@{viewModel.settingInfo.rebootMin}" />
+
+                <TextView
+                    style="@style/tv_setting_white_tip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/minute" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_close_door_delay_key"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_device_reboot"
+                android:text="@string/close_door_delay" />
+
+            <RelativeLayout
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/tv_device_reboot"
+                android:layout_marginStart="68dp"
+                android:layout_marginTop="50dp"
+                android:layout_toEndOf="@+id/tv_close_door_delay_key"
+                android:background="@drawable/bg_btn_white_round_border">
+
+                <EditText
+                    android:id="@+id/et_close_door_delay_value"
+                    style="@style/ev_setting_no_border"
+                    android:layout_width="match_parent"
+                    android:afterTextChanged="@{viewModel::onCloseDoorDelayTextChanged}"
+                    android:inputType="numberDecimal"
+                    android:maxLength="5"
+                    app:appendCursor="@{viewModel.strDelay}" />
+
+                <TextView
+                    style="@style/tv_setting_white_tip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/x5"
+                    android:text="@string/s" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_upload_image_key"
+                style="@style/tv_setting_margin_top_50"
+                android:layout_below="@+id/tv_close_door_delay_key"
+                android:text="@string/upload_record_image" />
+
+            <Switch
+                android:id="@+id/sh_upload_image_key"
+                style="@style/switch_theme"
+                android:layout_below="@+id/tv_close_door_delay_key"
+                android:layout_marginStart="@dimen/x30"
+                android:layout_marginTop="62dp"
+                android:layout_toEndOf="@+id/tv_upload_image_key"
+                android:checked="@{viewModel.settingInfo.uploadRecordImage == ConfigConstants.DEFAULT_UPLOAD_RECORD_IMAGE}"
+                android:clickable="@{viewModel.uploadImageEnable}"
+                android:onClick="@{viewModel::onSwitchClicked}" />
+
+            <TextView
+                android:id="@+id/tv_upload_image_hint_key"
+                style="@style/tv_setting_tip"
+                android:layout_below="@+id/tv_upload_image_key"
+                android:layout_marginBottom="@dimen/y40"
+                android:text="@string/upload_fr_record_picture_tip" />
+
+        </RelativeLayout>
+    </com.arcsoft.arcfacesingle.view.widgets.SimpleScrollView>
+</layout>

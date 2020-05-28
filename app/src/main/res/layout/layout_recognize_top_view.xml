@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.viewmodel.widget.TopViewModel" />
+
+        <variable
+            name="viewModel"
+            type="TopViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_main_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y100">
+
+            <ImageView
+                android:id="@+id/iv_main_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:adjustViewBounds="true"
+                android:maxWidth="@dimen/x150"
+                android:maxHeight="@dimen/y50"
+                android:scaleType="fitXY"
+                app:imageLogoBmp="@{viewModel.fieldLogo}" />
+
+            <com.arcsoft.asg.libcommon.widget.CustomMarqueeTextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/y50"
+                android:layout_marginStart="@dimen/x10"
+                android:layout_marginTop="@dimen/x20"
+                android:layout_marginEnd="@dimen/x10"
+                android:layout_toEndOf="@+id/iv_main_logo"
+                android:gravity="center"
+                android:maxWidth="@dimen/x260"
+                android:maxLength="30"
+                android:scrollHorizontally="true"
+                android:text="@{viewModel.fieldTitle}"
+                android:textColor="@color/color_white_tran"
+                android:textSize="@dimen/sp_24" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_bg_arrow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:layout_toEndOf="@+id/rl_main_logo" />
+    </RelativeLayout>
+
+
+</layout>

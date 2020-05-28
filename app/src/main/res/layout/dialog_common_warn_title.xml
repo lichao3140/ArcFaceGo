@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y350"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y40"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_common_dialog_warn"
+                android:layout_width="@dimen/x48"
+                android:layout_height="@dimen/x48"
+                android:layout_gravity="center_vertical"
+                android:background="@mipmap/ic_warn"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                style="@style/tv_setting"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/x20"
+                android:text="@string/dialog_warn" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_common_dialog_cancel"
+            android:layout_width="@dimen/x38"
+            android:layout_height="@dimen/x38"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_marginEnd="@dimen/x20"
+            android:padding="@dimen/x9"
+            android:src="@mipmap/ic_cancel" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_content"
+        android:layout_below="@id/rl_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/x60"
+        android:layout_marginEnd="@dimen/x60">
+
+        <TextView
+            android:id="@+id/tv_common_dialog_warning_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:textColor="@color/color_white_tran"
+            android:textSize="@dimen/sp_26" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y40">
+
+        <Button
+            android:id="@+id/btn_common_dialog_confirm"
+            style="@style/btn_dialog_done"
+            android:text="@string/confirm" />
+
+        <Button
+            android:id="@+id/btn_common_dialog_cancel"
+            style="@style/btn_dialog_cancel"
+            android:layout_marginStart="@dimen/x44"
+            android:layout_toEndOf="@id/btn_common_dialog_confirm"
+            android:text="@string/cancel" />
+    </RelativeLayout>
+</RelativeLayout>

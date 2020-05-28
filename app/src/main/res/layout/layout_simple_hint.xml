@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.viewmodel.widget.SimpleHintViewModel" />
+
+        <variable
+            name="viewModel"
+            type="SimpleHintViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/letterSpacing"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="@dimen/x15"
+            android:layout_marginTop="@dimen/x15"
+            android:background="@drawable/rst_bg"
+            android:gravity="center"
+            android:text="@{viewModel.fieldTitle}"
+            android:textColor="@color/color_white_tran"
+            android:textSize="@dimen/sp_24" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="@dimen/x15"
+            android:layout_marginTop="@dimen/x15"
+            android:background="@drawable/rst_lw" />
+
+        <ImageView
+            android:layout_width="330dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_normal_corner" />
+    </RelativeLayout>
+
+</layout>

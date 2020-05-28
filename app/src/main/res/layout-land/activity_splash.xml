@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default"/>
+
+    <ImageView
+            android:layout_width="@dimen/x422"
+            android:layout_height="@dimen/y330"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/ic_splash_logo"/>
+
+    <!--<TextView-->
+            <!--style="@style/tv_size_30_center_horizontal"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginBottom="@dimen/y262"-->
+            <!--android:text="@string/splash_bottom_tip"/>-->
+</RelativeLayout>

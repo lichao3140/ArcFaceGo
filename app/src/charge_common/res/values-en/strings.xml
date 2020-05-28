@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Arc FaceGo</string>
+    <string name="company_name">Arcsoft Corporation Limited</string>
+    <string name="default_open_door_type">TYPE_OPEN_DOOR_NORMAL_TYPE</string>
+    <string name="sdcard_package_name">com_arcsoft_arcfacesingle_charge</string>
+</resources>

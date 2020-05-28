@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.activity.PersonListActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.PersonListViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default" />
+
+        <View
+            android:id="@+id/view_common_top"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x116" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.CustomTopBar
+            android:id="@+id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_face_add"
+            style="@style/btn_setting_top"
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/y45"
+            android:layout_marginEnd="@dimen/x30"
+            android:layout_marginTop="@dimen/y13"
+            android:layout_alignParentEnd="true"
+            android:text="@string/add"
+            android:onClick="@{viewModel::onClick}"
+            android:visibility="@{viewModel.ivAddFaceVisible ? View.VISIBLE : View.GONE}"  />
+
+        <Button
+            android:id="@+id/btn_data_back_up"
+            style="@style/btn_setting_top"
+            android:background="@drawable/selector_btn_import_export"
+            android:layout_marginEnd="@dimen/x190"
+            android:layout_marginTop="@dimen/y13"
+            android:layout_alignParentEnd="true"
+            android:onClick="@{viewModel::onClick}"
+            android:textColor="@color/color_tv_blue"
+            android:text="@{viewModel.fieldImportExportContent}"
+            android:visibility="@{viewModel.fieldImportExportVisible ? View.VISIBLE : View.GONE}"  />
+
+        <EditText
+            android:id="@+id/et_person_search"
+            style="@style/ev_setting_default"
+            android:background="@drawable/bg_edit_text_grey_round_border"
+            android:layout_width="@dimen/x530"
+            android:layout_height="@dimen/y50"
+            android:layout_marginEnd="@dimen/x160"
+            android:layout_below="@+id/custom_top_bar"
+            android:layout_marginTop="@dimen/y40"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/x30"
+            android:afterTextChanged="@{viewModel::onPersonSearchTextChanged}"
+            android:text="@{viewModel.fieldSearchContent}"
+            android:hint="@string/search_person_hint"
+            android:textColorHint="@color/grey_666666"
+            android:maxLength="30"/>
+
+        <Button
+            android:id="@+id/btn_person_search"
+            style="@style/btn_setting_top"
+            android:layout_below="@+id/custom_top_bar"
+            android:background="@drawable/selector_setting_save_btn"
+            android:layout_marginTop="@dimen/y40"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/y50"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/x30"
+            android:onClick="@{viewModel::onClick}"
+            android:textColor="@color/color_setting_btn_save_text"
+            android:text="@string/person_manager_search"/>
+
+        <TextView
+            android:id="@+id/tv_face_total"
+            android:layout_below="@+id/et_person_search"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/x35"
+            android:layout_marginTop="@dimen/x40"
+            android:text="@{viewModel.strFaceTotal}"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_34" />
+
+        <TextView
+            android:id="@+id/tv_face_search_total"
+            android:layout_below="@+id/et_person_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x35"
+            android:layout_marginTop="@dimen/x40"
+            android:text="@{viewModel.strFaceSearchTotal}"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_24"
+            android:visibility="@{viewModel.fieldSearchResultVisible ? View.VISIBLE : View.GONE}"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_faces"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_face_total"
+            android:layout_marginTop="@dimen/y25"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/y10"
+            android:scrollbars="vertical" />
+
+        <RelativeLayout
+            android:id="@+id/rl_delete"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x132"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_person_manager_bottom"
+            android:visibility="@{viewModel.rlDeleteVisible ? View.VISIBLE : View.GONE}">
+
+            <TextView
+                android:id="@+id/tv_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/selector_person_bottom_delete_btn_enable"
+                android:drawablePadding="@dimen/x5"
+                android:textSize="@dimen/sp_24"
+                android:layout_marginStart="@dimen/x165"
+                android:layout_centerVertical="true"
+                android:onClick="@{viewModel::onClick}"
+                android:textColor="@color/color_person_bottom_enable"
+                android:text="@string/delete"/>
+
+            <CheckBox
+                android:id="@+id/cb_select_all"
+                style="@style/check_box"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/x165"
+                android:button="@null"
+                android:drawableTop="@drawable/ic_person_all_select"
+                android:drawablePadding="@dimen/x5"
+                android:layout_centerVertical="true"
+                android:checked="@{viewModel.cbSelectAllChecked}"
+                android:onClick="@{viewModel::onClick}"
+                android:textColor="@color/color_0089C7"
+                android:text="@{viewModel.cbSelectTitle}"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

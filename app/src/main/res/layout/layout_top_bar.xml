@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.widget.TopBarViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x70"
+        android:background="@color/color_top_bar_bg">
+
+        <RelativeLayout
+            android:id="@+id/rl_top_bar_close"
+            android:layout_width="@dimen/x100"
+            android:layout_height="match_parent"
+            android:onClick="@{viewModel::onClick}"
+            android:visibility="@{viewModel.fieldVisibleClose ? View.VISIBLE : View.GONE}" >
+
+            <Button
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:clickable="false"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/x30"
+                android:background="@drawable/ic_close"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_title_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{viewModel.fieldStringTitle}"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_30"
+            android:visibility="@{viewModel.fieldVisibleTitle ? View.VISIBLE : View.GONE}" />
+
+        <Button
+            android:id="@+id/btn_top_bar_skip"
+            style="@style/btn_setting_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/x25"
+            android:onClick="@{viewModel::onClick}"
+            android:text="@string/skip"
+            android:visibility="@{viewModel.fieldVisibleSkip ? View.VISIBLE : View.GONE}" />
+
+        <ImageView
+            android:id="@+id/btn_top_bar_setting"
+            style="@style/btn_setting_skip"
+            android:layout_width="@dimen/x56"
+            android:layout_height="@dimen/x56"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/x23"
+            android:onClick="@{viewModel::onClick}"
+            android:padding="@dimen/x10"
+            android:src="@mipmap/ic_activate"
+            android:visibility="@{viewModel.fieldVisibleSetting ? View.VISIBLE : View.GONE}" />
+    </RelativeLayout>
+</layout>

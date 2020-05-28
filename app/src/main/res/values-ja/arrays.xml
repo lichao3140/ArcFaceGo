@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_message_list">
+        <item>28673:無効AppId</item>
+        <item>28674:無効SDKKey</item>
+        <item>28675:AppIdとSDKKeyが合いません</item>
+        <item>28676:SDKKeyと使用中のSDKが合いません</item>
+        <item>28677:システムバージョンは現在のSDKでサポートされていません</item>
+        <item>28678:SDKの有効期限が切れています。更新プログラムを再度ダウンロードする必要があります</item>
+        <item>90113:SDKのアクティベーションに失敗しました。読み取りおよび書き込み権限を開いてください</item>
+        <item>90114:デバイスがアクティブされました</item>
+        <item>90115:デバイスがアクティブされていません</item>
+        <item>90116:detectFaceScaleValはサポートされていません</item>
+        <item>90117:アクティベーションファイルがSDKタイプと一致しません</item>
+        <item>90118:デバイスが合いません</item>
+        <item>90119:唯一の認証は違法です</item>
+        <item>90120:パラメーターが入力されていません</item>
+        <item>90121:生体検知機能の有効期限が切れました</item>
+        <item>90122:バージョンはサポートされていません</item>
+        <item>90123:サインエラー</item>
+        <item>90124:データベース挿入エラー</item>
+        <item>90125:唯一の認証に失敗しました</item>
+        <item>90126:色スペースはサポートされていません</item>
+        <item>90127:画像の幅または高さはサポートされていません</item>
+        <item>90128:android.permission.READ_PHONE_STATE許可が拒否されました</item>
+        <item>90129:アクティベーションデータが破損しています。アクティベーションファイルを削除して再アクティベートしてください</item>
+        <item>90130:サーバー不明エラー</item>
+        <item>90131:インターネット許可が拒否されました</item>
+        <item>90132:アクティベーションファイルがSDKバージョンと一致しません。再アクティベートしてください90132:アクティベーションファイルがSDKバージョンと一致しません。再アクティベートしてください</item>
+        <item>90133:デバイスの指紋を生成するにはデバイス情報が少なすぎます</item>
+        <item>90134:クライアント時間とサーバー時間の差は30分以内です</item>
+        <item>90135:データチェックエラー</item>
+        <item>90136:AppIdおよびSDKKeyは、使用されているSDKバージョンとは異なります</item>
+        <item>90137:多数のリクエストが短時間禁止されたため、30分後にブロックが解除されます</item>
+        <item>90138:アクティベーションファイルは存在しません</item>
+        <item>90139:現在の設備時間が正しくないので、設備時間を調整してください</item>
+        <item>94209:ホストアドレスを解析できません</item>
+        <item>94210:サーバーにつなぐことはできません</item>
+        <item>94211:ネットワーク接続がタイムアウトしました</item>
+        <item>94212:ネットワーク不明エラー</item>
+        <item>98305:アクティベーションコードサーバーに接続できません</item>
+        <item>98306:サーバーシステムエラー</item>
+        <item>98307:パラメーターエラーを要求</item>
+        <item>98308:ActiveKeyがAppId、SDKKeyと一致しません</item>
+        <item>98309:ActiveKeyはすでに使用されています</item>
+        <item>98310:ActiveKey情報の例外</item>
+        <item>98311:ActiveKeyはAppIdと一致しません</item>
+        <item>98312:SDKはアクティベーションファイルのバージョンと一致しません</item>
+        <item>98313:ActiveKeyの有効期限が切れています</item>
+
+        <item>102401:オフライン認証ファイルが存在しないか、読み取りおよび書き込み権限がありません</item>
+        <item>102402:オフライン認証ファイルが破損しています</item>
+        <item>102403:オフライン認証ファイルがSDKバージョンと一致しません</item>
+        <item>102404:オフライン認証ファイルがSDKバージョンと一致しません</item>
+        <item>102405:オフライン認証ファイルがデバイスの指紋と一致しません</item>
+        <item>102406:オフライン認証ファイルの有効期限が切れています</item>
+        <item>102407:オフライン認証ファイルは使用できません。元のローカルアクティベーションファイルは引き続き使用できます</item>
+    </string-array>
+
+    <string-array name="success_preview_voice">
+        <item>@string/success_preview_voice2</item>
+        <item>@string/success_preview_voice3</item>
+        <item>@string/success_preview_voice4</item>
+        <item>@string/success_preview_voice5</item>
+        <item>@string/success_preview_voice6</item>
+    </string-array>
+
+    <string-array name="fail_preview_voice">
+        <item>@string/fail_preview_voice2</item>
+        <item>@string/fail_preview_voice3</item>
+        <item>@string/fail_preview_voice4</item>
+    </string-array>
+
+    <string-array name="face_detect_degree">
+        <item>0°</item>
+        <item>90°</item>
+        <item>180°</item>
+        <item>270°</item>
+    </string-array>
+
+    <string-array name="recognition_distance">
+        <item>@string/recognition_distance_type1</item>
+        <item>@string/recognition_distance_type2</item>
+        <item>@string/recognition_distance_type3</item>
+        <item>@string/recognition_distance_type4</item>
+        <item>@string/recognition_distance_type5</item>
+    </string-array>
+
+    <integer name="edit_text_char_max_length_30">30</integer>
+    <integer name="edit_text_char_max_length_20">20</integer>
+    <integer name="edit_text_char_max_length_50">50</integer>
+</resources>

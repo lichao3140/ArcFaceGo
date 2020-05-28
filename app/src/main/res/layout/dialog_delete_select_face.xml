@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/bg_dialog"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                style="@style/tv_setting"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/y45"
+                android:text="@string/dialog_warn"/>
+
+        <ImageView
+                android:id="@+id/iv_delete_face_cancel"
+                android:layout_width="@dimen/x38"
+                android:layout_height="@dimen/x38"
+                android:layout_marginTop="@dimen/y20"
+                android:layout_marginEnd="@dimen/x20"
+                android:padding="@dimen/x9"
+                android:layout_alignParentEnd="true"
+                android:src="@mipmap/ic_cancel"
+                android:visibility="gone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        <TextView
+                android:id="@+id/tv_delete_face_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x15"
+                android:layout_marginEnd="@dimen/x15"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/color_white_tran"
+                android:textSize="@dimen/sp_30"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y45"
+            android:layout_marginEnd="@dimen/x75"
+            android:layout_marginStart="@dimen/x75">
+
+        <Button
+                android:id="@+id/btn_delete_face_confirm"
+                style="@style/btn_dialog_done"
+                android:text="@string/confirm"/>
+
+        <Button
+                android:id="@+id/btn_delete_face_cancel"
+                style="@style/btn_dialog_cancel"
+                android:layout_toEndOf="@id/btn_delete_face_confirm"
+                android:layout_marginStart="@dimen/x44"
+                android:text="@string/cancel"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="already_rotation_degree">Current rotation %d°</string>
+    <string name="camera_open_fail">Camera failure</string>
+    <string name="camera_preview_size_setting">Camera resolution: </string>
+    <string name="select_camera_preview_size_tip">Please select the resolution so that the contents of the two cameras are the same, or the IR range is larger </string>
+    <string name="preview_view_camera_position_zero">0</string>
+    <string name="preview_view_camera_position_one">1</string>
+    <string name="preview_frame_camera">Preview camera:</string>
+    <string name="preview_view_face_detect_degree">Preview FR angle:</string>
+    <string name="preview_view_face_detect_degree_tip">Please select the correct angle to ensure that the APP display view can detect the face box</string>
+    <string name="preview_frame">APP display view</string>
+    <string name="adjustment_normal_degree_and_ratio">Please adjust to normal Angle and proportion</string>
+    <string name="rotate_90_degrees">Rotate 90°</string>
+    <string name="width_height_interchange">Wide high swap</string>
+    <string name="mirror_image">Mirror</string>
+    <string name="face_rect_horizontal_mirror">Face horizontal mirroring</string>
+    <string name="face_rect_vertical_mirror">Face vertical mirror</string>
+    <string name="recognition_algorithm_collection">Recognition algorithm acquisition: </string>
+    <string name="recognition_algorithm_collection_tip">Please adjust the following two recognition algorithms to capture the view so that the face frame position is the same</string>
+    <string name="horizontal_displacement">Horizontal movement:</string>
+    <string name="vertical_displacement">Vertical movement:</string>
+    <string name="save">Save</string>
+    <string name="adaptation_info_save_success">The adaptation information is saved successfully</string>
+    <string name="settings_save_success">Save settings parameters successfully</string>
+    <string name="face_engine_init_fail">Face engine activation failed</string>
+</resources>

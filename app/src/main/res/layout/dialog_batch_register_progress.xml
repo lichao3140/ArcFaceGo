@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y50">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            style="@style/tv_setting"
+            android:text="@string/batch_register_process_show"
+            android:textColor="@color/color_white"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/iv_batch_register_cancel"
+            android:layout_width="@dimen/x38"
+            android:layout_height="@dimen/x38"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/x20"
+            android:padding="@dimen/x9"
+            android:src="@mipmap/ic_cancel"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x50"
+        android:layout_marginEnd="@dimen/x50"
+        android:shadowColor="@color/color_white_tran">
+
+        <com.arcsoft.arcfacesingle.view.widgets.HorizontalProgressBar
+            android:id="@+id/progress_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x36"
+            android:background="@drawable/bg_btn_white_border"
+            app:progress_reached_bar_height="@dimen/x34_5"
+            app:progress_reached_color="@color/bg_0684f8"
+            app:progress_text_color="@color/color_common_enable"
+            app:progress_unreached_color="@color/color_common_enable" />
+
+        <TextView
+            android:id="@+id/tv_progress_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/color_common_enable"
+            android:textSize="@dimen/sp_24" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_batch_register_progress_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x30"
+        android:layout_marginEnd="@dimen/x30"
+        android:textColor="@color/color_common_enable"
+        android:textSize="@dimen/sp_18" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_batch_register_complete_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x30"
+        android:layout_marginEnd="@dimen/x30"
+        android:textColor="@color/color_common_enable"
+        android:textSize="@dimen/sp_18" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/btn_batch_register_confirm"
+        style="@style/btn_clean_data_dialog"
+        android:layout_width="@dimen/x170"
+        android:layout_height="@dimen/y60"
+        android:layout_marginBottom="50dp"
+        android:enabled="false"
+        android:text="@string/confirm"
+        android:textSize="@dimen/sp_34" />
+</LinearLayout>

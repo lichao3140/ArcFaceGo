@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.arcsoft.arcfacesingle.viewmodel.widget.BottomViewModel" />
+
+        <variable
+            name="viewModel"
+            type="BottomViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl_timezone"
+            android:layout_width="@dimen/x315"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x100"
+                android:layout_marginTop="@dimen/x25"
+                android:gravity="center"
+                android:text="@{viewModel.fieldTime}"
+                android:textColor="@color/color_white_tran"
+                android:textSize="@dimen/sp_34" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_time"
+                android:layout_marginStart="@dimen/x100"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@{viewModel.fieldDate}"
+                android:textColor="@color/color_white_tran"
+                android:textSize="@dimen/sp_24" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/iv_bg_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y80"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="-80dp"
+            android:layout_toStartOf="@+id/rl_timezone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y15"
+                android:adjustViewBounds="true"
+                android:maxWidth="@dimen/x150"
+                android:maxHeight="@dimen/y40"
+                android:scaleType="fitXY"
+                app:imageLogoBmp="@{viewModel.fieldLogo}" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_bg_arrow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/iv_bg_logo" />
+
+    </RelativeLayout>
+
+
+</layout>

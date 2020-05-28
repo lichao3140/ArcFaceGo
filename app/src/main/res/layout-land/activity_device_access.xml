@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.arcsoft.arcfacesingle.viewmodel.DeviceAccessViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg_screen_default" />
+
+        <com.arcsoft.arcfacesingle.view.widgets.CustomTopBar
+            android:id="@+id/custom_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_top_bar">
+
+            <RelativeLayout
+                android:id="@+id/rl_device_access_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x226"
+                android:layout_marginTop="@dimen/x150"
+                android:layout_marginEnd="@dimen/x226">
+
+                <TextView
+                    android:id="@+id/tv_access_id_tip"
+                    style="@style/tv_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_alignEnd="@id/tv_server_ip_address"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/x30"
+                    android:text="@string/device_access_id" />
+
+                <FrameLayout
+                    android:id="@+id/fl_access_id_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x50"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginEnd="@dimen/x30"
+                    android:layout_toEndOf="@id/tv_server_ip_address">
+
+                    <TextView
+                        android:id="@+id/tv_access_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|start"
+                        android:text="@={viewModel.fieldAccessId}"
+                        android:textColor="@color/color_white"
+                        android:textSize="@dimen/sp_24"
+                        android:visibility="@{viewModel.fieldAccessIdTvVisible ? View.VISIBLE : View.GONE}" />
+
+                    <com.arcsoft.arcfacesingle.view.widgets.SeparateEditText
+                        android:id="@+id/et_access_id"
+                        style="@style/ev_setting_no_grey"
+                        android:layout_width="match_parent"
+                        android:afterTextChanged="@{viewModel::onAccessIdEditTextChanged}"
+                        android:digits="@string/digits_access_id"
+                        android:gravity="center_vertical|start"
+                        android:inputType="textNoSuggestions|textVisiblePassword"
+                        android:maxLength="19"
+                        android:text="@={viewModel.fieldAccessId}"
+                        android:visibility="@{viewModel.fieldAccessIdTvVisible ? View.GONE : View.VISIBLE}" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv_warn1"
+                    android:layout_width="@dimen/x22"
+                    android:layout_height="@dimen/x22"
+                    android:layout_below="@id/fl_access_id_tip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/x12"
+                    android:layout_toEndOf="@id/tv_server_ip_address"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.fieldAccessIdWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn1"
+                    style="@style/tv_setting_tip"
+                    android:layout_below="@id/fl_access_id_tip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toEndOf="@id/iv_warn1"
+                    android:text="@{viewModel.fieldStringWarn1}"
+                    android:textColor="@color/color_text_red"
+                    android:visibility="@{viewModel.fieldAccessIdWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_device_identify"
+                    style="@style/tv_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/fl_access_id_tip"
+                    android:layout_alignEnd="@id/tv_server_ip_address"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/x30"
+                    android:layout_marginTop="@dimen/x52"
+                    android:text="@string/device_identify" />
+
+                <FrameLayout
+                    android:id="@+id/fl_device_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y50"
+                    android:layout_below="@id/fl_access_id_tip"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/x50"
+                    android:layout_marginEnd="@dimen/x30"
+                    android:layout_toEndOf="@id/tv_server_ip_address">
+
+                    <LinearLayout
+                        android:id="@+id/ll_device_tag_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="@{viewModel.fieldLlDeviceTagInputVisible ? View.VISIBLE : View.GONE}">
+
+                        <EditText
+                            android:id="@+id/et_device_tag"
+                            style="@style/ev_setting_no_grey"
+                            android:layout_width="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:afterTextChanged="@{viewModel::onDeviceTagEditTextChanged}"
+                            android:gravity="center_vertical|start"
+                            android:maxLength="@integer/edit_text_char_max_length_30"
+                            android:text="@={viewModel.fieldDeviceTag}" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/x50"
+                            android:visibility="@{viewModel.fieldDeviceTagRlVisible ? View.VISIBLE : View.GONE}">
+
+                            <ImageView
+                                android:id="@+id/iv_device_tag_modify_confirm"
+                                android:layout_width="@dimen/x40"
+                                android:layout_height="@dimen/x40"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/x20"
+                                android:background="@drawable/ic_edit_confirm"
+                                android:onClick="@{viewModel::onClick}"
+                                android:scaleType="fitXY"
+                                android:visibility="@{viewModel.fieldDeviceTagConfirmIvVisible ? View.VISIBLE : View.GONE}" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_device_tag_modify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:visibility="@{viewModel.fieldLlDeviceTagInputVisible ? View.GONE : View.VISIBLE}">
+
+                        <TextView
+                            android:id="@+id/tv_device_tag_detail"
+                            style="@style/tv_setting"
+                            android:layout_width="0dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@{viewModel.fieldDeviceTag}"
+                            android:textSize="@dimen/sp_24" />
+
+                        <ImageView
+                            android:id="@+id/iv_device_tag_modify"
+                            android:layout_width="@dimen/x40"
+                            android:layout_height="@dimen/x40"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/x20"
+                            android:background="@drawable/ic_edit"
+                            android:onClick="@{viewModel::onClick}"
+                            android:scaleType="fitXY"
+                            android:visibility="@{viewModel.fieldDeviceTagModifyIvVisible ? View.VISIBLE : View.GONE}" />
+
+                    </LinearLayout>
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv_warn2"
+                    android:layout_width="@dimen/x22"
+                    android:layout_height="@dimen/x22"
+                    android:layout_below="@id/fl_device_tag"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/x12"
+                    android:layout_toEndOf="@id/tv_server_ip_address"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.fieldDeviceTagWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn2"
+                    style="@style/tv_setting_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/fl_device_tag"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toEndOf="@id/iv_warn2"
+                    android:text="@{viewModel.fieldStringWarn2}"
+                    android:textColor="@color/color_text_red"
+                    android:visibility="@{viewModel.fieldDeviceTagWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_server_ip_address"
+                    style="@style/tv_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/fl_device_tag"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/x30"
+                    android:layout_marginTop="@dimen/x60"
+                    android:text="@string/server_ip_address" />
+
+                <FrameLayout
+                    android:id="@+id/ll_server_ip_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y50"
+                    android:layout_below="@id/fl_device_tag"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/x60"
+                    android:layout_marginEnd="@dimen/x30"
+                    android:layout_toEndOf="@id/tv_server_ip_address">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:visibility="@{viewModel.fieldServerIpEditLlVisible ? View.GONE : View.VISIBLE}">
+
+                        <TextView
+                            android:id="@+id/tv_server_ip_address_detail"
+                            style="@style/tv_setting"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:singleLine="true"
+                            android:text="@{viewModel.fieldServerIp}"
+                            android:textSize="@dimen/sp_24" />
+
+                        <ImageView
+                            android:id="@+id/iv_server_ip_modify"
+                            android:layout_width="@dimen/x40"
+                            android:layout_height="@dimen/x40"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/x20"
+                            android:background="@drawable/ic_edit"
+                            android:onClick="@{viewModel::onClick}"
+                            android:scaleType="fitXY"
+                            android:visibility="@{viewModel.fieldServerIpModifyIvVisible ? View.VISIBLE : View.GONE}" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:visibility="@{viewModel.fieldServerIpEditLlVisible ? View.VISIBLE : View.GONE}">
+
+                        <EditText
+                            android:id="@+id/et_server_ip_address"
+                            style="@style/ev_setting"
+                            android:layout_width="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:afterTextChanged="@{viewModel::onServerIpEditTextChanged}"
+                            android:gravity="center_vertical|start"
+                            android:inputType="textNoSuggestions|textVisiblePassword"
+                            android:maxLength="@integer/edit_text_char_max_length_50"
+                            android:text="@={viewModel.fieldServerIp}" />
+
+                        <ImageView
+                            android:id="@+id/iv_server_ip_modify_confirm"
+                            android:layout_width="@dimen/x40"
+                            android:layout_height="@dimen/x40"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/x20"
+                            android:background="@drawable/ic_edit_confirm"
+                            android:onClick="@{viewModel::onClick}"
+                            android:scaleType="fitXY" />
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/iv_warn3"
+                    android:layout_width="@dimen/x22"
+                    android:layout_height="@dimen/x22"
+                    android:layout_below="@id/ll_server_ip_address"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x15"
+                    android:layout_marginTop="@dimen/x12"
+                    android:layout_toEndOf="@id/tv_server_ip_address"
+                    android:background="@mipmap/ic_empty"
+                    android:scaleType="fitXY"
+                    android:visibility="@{viewModel.fieldServerURLWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/tv_warn3"
+                    style="@style/tv_setting_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/ll_server_ip_address"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x10"
+                    android:layout_marginTop="@dimen/x10"
+                    android:layout_toEndOf="@id/iv_warn3"
+                    android:text="@{viewModel.fieldStringWarn3}"
+                    android:textColor="@color/color_text_red"
+                    android:visibility="@{viewModel.fieldServerURLWarnVisible ? View.VISIBLE : View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_device_access_unbind"
+                    style="@style/btn_setting_active"
+                    android:textAllCaps="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x65"
+                    android:layout_below="@+id/ll_server_ip_address"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x135"
+                    android:onClick="@{viewModel::onClick}"
+                    android:text="@{viewModel.fieldBindSuccess ? @string/device_unbinding : @string/device_access}" />
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/progress_bar_size25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_server_ip_address"
+                    android:layout_alignEnd="@id/btn_device_access_unbind"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/x156"
+                    android:layout_marginEnd="@dimen/x25"
+                    android:indeterminateDuration="2000" />
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

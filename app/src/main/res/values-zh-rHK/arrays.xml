@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_message_list">
+        <item>28673:無效的AppId</item>
+        <item>28674:無效的SDKKey</item>
+        <item>28675:AppId和SDKKey不匹配</item>
+        <item>28676:SDKKey和使用的SDK不匹配</item>
+        <item>28677:系統版本不被當前SDK支援</item>
+        <item>28678:SDK過期，需要重新下載更新</item>
+        <item>90113:SDK啟用失敗，請打開讀寫權限</item>
+        <item>90114:設備已啟用</item>
+        <item>90115:設備未啟用</item>
+        <item>90116:detectFaceScaleVal不支持</item>
+        <item>90117:啟用文件與SDK類型不匹配</item>
+        <item>90118:設備不匹配</item>
+        <item>90119:唯一標識不合法</item>
+        <item>90120:參數為空</item>
+        <item>90121:活體檢測功能已過期</item>
+        <item>90122:版本不支持</item>
+        <item>90123:簽名錯誤</item>
+        <item>90124:數據庫插入錯誤</item>
+        <item>90125:唯一標識符校驗失敗</item>
+        <item>90126:顏色空間不支持</item>
+        <item>90127:圖片寬度或高度不支持</item>
+        <item>90128:android.permission.READ_PHONE_STATE權限被拒絕</item>
+        <item>90129:啟用數據被破壞，請刪除啟用文件，重新進行啟用</item>
+        <item>90130:主機端未知錯誤</item>
+        <item>90131:INTERNET權限被拒絕</item>
+        <item>90132:啟用文件與SDK版本不匹配，請重新啟用</item>
+        <item>90133:設備信息太少，不足以生成設備指紋</item>
+        <item>90134:設備時間與網路時間偏差過大，請檢查</item>
+        <item>90135:數據校驗異常</item>
+        <item>90136:傳入的AppId和SDKKey與使用的SDK版本不一致</item>
+        <item>90137:短時間大量請求會被禁止請求，30分鐘之後會解封</item>
+        <item>90138:啟用文件不存在</item>
+        <item>90139:當前設備時間不正確，請調整設備時間</item>
+        <item>94209:連接主機失敗，請檢查網絡</item>
+        <item>94210:連接主機失敗，請檢查網絡</item>
+        <item>94211:網路連接超時</item>
+        <item>94212:網路未知錯誤</item>
+        <item>98305:無法連接啟用碼主機</item>
+        <item>98306:主機系統錯誤</item>
+        <item>98307:請求參數錯誤</item>
+        <item>98308:ActiveKey與AppId、SDKKey不匹配</item>
+        <item>98309:ActiveKey已經被使用</item>
+        <item>98310:ActiveKey訊息異常</item>
+        <item>98311:ActiveKey與AppId不匹配</item>
+        <item>98312:SDK與啟用文件版本不匹配</item>
+        <item>98313:ActiveKey已過期</item>
+
+        <item>102401:離線授權文件不存在或無讀寫權限</item>
+        <item>102402:離線授權文件已損壞</item>
+        <item>102403:離線授權文件與SDK版本不匹配</item>
+        <item>102404:離線授權文件與SDK訊息不匹配</item>
+        <item>102405:離線​​授權文件與設備指紋不匹配</item>
+        <item>102406:離線授權文件已過期</item>
+        <item>102407:離線授權文件不可用，本地原有啟用文件可繼續使用</item>
+    </string-array>
+
+    <string-array name="success_preview_voice">
+        <item>@string/success_preview_voice2</item>
+        <item>@string/success_preview_voice3</item>
+        <item>@string/success_preview_voice4</item>
+        <item>@string/success_preview_voice5</item>
+        <item>@string/success_preview_voice6</item>
+    </string-array>
+
+    <string-array name="fail_preview_voice">
+        <item>@string/fail_preview_voice2</item>
+        <item>@string/fail_preview_voice3</item>
+        <item>@string/fail_preview_voice4</item>
+    </string-array>
+
+    <string-array name="face_detect_degree">
+        <item>0°</item>
+        <item>90°</item>
+        <item>180°</item>
+        <item>270°</item>
+    </string-array>
+
+    <string-array name="recognition_distance">
+        <item>@string/recognition_distance_type1</item>
+        <item>@string/recognition_distance_type2</item>
+        <item>@string/recognition_distance_type3</item>
+        <item>@string/recognition_distance_type4</item>
+        <item>@string/recognition_distance_type5</item>
+    </string-array>
+
+    <integer name="edit_text_char_max_length_30">30</integer>
+    <integer name="edit_text_char_max_length_20">20</integer>
+    <integer name="edit_text_char_max_length_50">50</integer>
+</resources>

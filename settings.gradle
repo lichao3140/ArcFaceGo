@@ -1,0 +1,5 @@
+include ':app'
+include ':arcsdk:libarcface'
+include ':libmodule'
+include ':libdeviceadapt'
+include ':libutil'

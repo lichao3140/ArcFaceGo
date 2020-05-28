@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y350"
+    android:background="@drawable/bg_dialog"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        style="@style/tv_setting"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y50"
+        android:text="@string/dialog_warn" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_active_result_confirm"
+        android:layout_below="@id/tv_dialog_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/x50"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_marginEnd="@dimen/x50"
+        android:layout_marginBottom="@dimen/y10">
+
+        <TextView
+            android:id="@+id/iv_common_dialog_warn"
+            android:layout_width="@dimen/x48"
+            android:layout_height="@dimen/x48"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_active_result_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/x20"
+            android:layout_toEndOf="@id/iv_common_dialog_warn"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="4"
+            android:textColor="@color/color_white_tran"
+            android:textSize="@dimen/sp_32" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_active_result_confirm"
+        style="@style/btn_dialog_done"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/y50"
+        android:background="@drawable/enable_btn_active_confirm"
+        android:gravity="center"
+        android:text="@string/confirm" />
+</RelativeLayout>

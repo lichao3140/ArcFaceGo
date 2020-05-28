@@ -1,0 +1,5 @@
+<resources>
+    <style name="letterSpacing">
+        <item name="android:letterSpacing">0</item>
+    </style>
+</resources>
