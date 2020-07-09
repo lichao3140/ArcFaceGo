@@ -1,4 +1,4 @@
-# 301公版对接R600 公版使用
+# 人脸识别ARC3.1算法
 ##### sqlite>.help 这个命令让我们看到许多命令
 ##### sqlite>.exit 命令退出sqlite，返回到#提示符。
 ##### sqlite>.tables 查看所有表
@@ -32,3 +32,8 @@ DELETE FROM tRecord WHERE id = 1;
 
 --表示模糊查询
 select * from tRecord where snapImageID like '%1545983101377673%';
+
+<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-001.png" width = "230" height = "400" alt="人脸识别" />
+<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-002.png" width = "230" height = "400" alt="人脸识别" />
+<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-003.png" width = "230" height = "400" alt="人脸识别" />
+<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-004.png" width = "230" height = "400" alt="人脸识别" />
