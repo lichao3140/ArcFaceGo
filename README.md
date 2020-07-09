@@ -33,7 +33,7 @@ DELETE FROM tRecord WHERE id = 1;
 --表示模糊查询
 select * from tRecord where snapImageID like '%1545983101377673%';
 
-<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-001.png" width = "230" height = "400" alt="人脸识别" />
-<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-002.png" width = "230" height = "400" alt="人脸识别" />
-<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-003.png" width = "230" height = "400" alt="人脸识别" />
-<img src="https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-004.png" width = "230" height = "400" alt="人脸识别" />
+![image](https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-001.png)
+![image](https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-002.png)
+![image](https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-003.png)
+![image](https://github.com/lichao3140/ArcFaceGo/blob/master/screenshot/device-004.png)
